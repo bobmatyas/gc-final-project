@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="ColorApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Color Chooser</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <header class="navigation-container">
+    <nav>
+      <ul class="navigation-menu">
+        <li><a href="#!/home">Home</a></li>
+        <li><a href="#!/about">About Me</a></li>
+        <li><a href="#!/photos">Photos</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  
+  <main id="main" data-ng-view>
+    <!-- anything configured in the route is going to be injected here -->
+  </main>
+
+  <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
+  
+  <!-- the line below adds routing stuff to the app -->
+  <script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+
+  <script src="photo.service.js"></script>
+
+  <script src="components/home/home.js"></script>
+  <script src="components/about/about.js"></script>
+  <script src="components/photos/photos.js"></script>
+
+</body>
+</html>
