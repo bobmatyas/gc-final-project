@@ -69,6 +69,23 @@ function PhotosController(PhotoService, $q) {
     });
   }
 
+  ctrl.imageColor = (image) => {
+    return $q(function(resolve, reject) {
+      PhotoService.extractColor(image)
+        .then( (response) => {
+          console.log(`color scheme`);
+          ctrl.colorResponse = response.data;
+          console.log(ctrl.colorResponse);
+          resolve();
+          }
+        )
+        .catch( function(error) {
+          console.error(error);
+          throw error;
+        });
+    });
+  }
+
 
 }
 
@@ -90,6 +107,8 @@ angular.module('ColorApp').component('photos', {
         </div>
 
         <h2>Color Scheme Test</h2>
+
+        <button ng-click="$ctrl.imageColor()">Test Button</button>
 
 
 
