@@ -4,7 +4,7 @@ function PhotosController(PhotoService, $q) {
   // retrieve photos on initial page load -- mainly for testing
 
   ctrl.$onInit = function() {
-    ctrl.photos = [];
+
     // ctrl.getPhotos();
     ctrl.indPhoto = '';
     ctrl.getIndividualPhoto(4252039);
@@ -12,7 +12,7 @@ function PhotosController(PhotoService, $q) {
 
 
   /** 
-   * A static array of categories for the search criteria.
+   * A static array of categories for the search.
    * The category list is provided by Pixabay. 
   */
 
@@ -121,14 +121,18 @@ angular.module('ColorApp').component('photos', {
 
         <h2>List of Photos from Pixabay API</h2>
 
-        <div ng-repeat="photo in $ctrl.photos">
+        <div ng-if="$ctrl.photos.length >= 1" ng-repeat="photo in $ctrl.photos">
           <img src="{{ photo.previewURL }}" />
+        </div>
+
+        <div ng-if="$ctrl.photos.length < 1">
+          <p style="color: red; font-weight: bold;">No results.</p>
         </div>
 
         <h2>TEST: Individual Photo from Pixabay API</h2>
 
         <div ng-repeat="indPhoto in $ctrl.indPhoto">
-          <img src="{{ indPhoto.largeImageURL }}" />
+          <img src="{{ indPhoto.largeImageURL }}" style="max-width: 100%;"/>
         </div>
 
 
