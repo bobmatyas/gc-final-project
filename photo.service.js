@@ -2,13 +2,14 @@ function PhotoService($http) {
   
   const service = this;
 
-  service.getPhotos = (queryText) => {
+  service.getPhotos = (queryText, photoCategory) => {
     return $http.get('https://pixabay.com/api/?', {
       params: {
         key: '12720616-1db5a8f546ac81882f86afb32',
         lang: 'en',
         image_type: 'photo',
         q: queryText,
+        category: photoCategory,
       }
     });
   };

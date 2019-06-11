@@ -40,10 +40,10 @@ function PhotosController(PhotoService, $q) {
 
   // this function gets the photos based on user search criteria
 
-  ctrl.getPhotos = (queryText) => {
+  ctrl.getPhotos = (queryText, photoCategory) => {
 
     return $q(function(resolve, reject) {
-      PhotoService.getPhotos(queryText)      
+      PhotoService.getPhotos(queryText, photoCategory)      
         .then( (response) => {
           console.log(response.data.hits);  
           ctrl.photos = response.data.hits;
@@ -90,12 +90,12 @@ angular.module('ColorApp').component('photos', {
         <h2>Search</h2>
 
         <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="what type of image?" ng-keypress="($event.charCode==13)? $ctrl.getPhotos($ctrl.homeSearch) : return" />
-        <select ng-model="ctrl.photoCategory">
-          <option selected> </option>
-          <option ng-repeat="category in $ctrl.photoCategories">{{ category }}</option>
+        <select ng-model="$ctrl.photoCategory">
+          <option value="" disabled selected hidden>Please Choose... </option>
+          <option ng-repeat="category in $ctrl.photoCategories" value="{{ category }}"> {{ category.charAt(0).toUpperCase()+ category.substr(1).toLowerCase()  }}</option>
         </select>
 
-        <button class="button-green" ng-click="$ctrl.getPhotos($ctrl.photoSearch)">
+        <button class="button-green" ng-click="$ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory)">
           Search
         </button>
 
