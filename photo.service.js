@@ -2,8 +2,18 @@ function PhotoService($http) {
   
   const service = this;
 
-  service.getPhotos = () => {
-    return $http.get('https://pixabay.com/api/?key=12720616-1db5a8f546ac81882f86afb32lang=en&image_type=photo&colors=green');
+  service.getPhotos = (queryText, photoCategory, photoOrientation) => {
+    return $http.get('https://pixabay.com/api/', {
+      params: {
+        key: '12720616-1db5a8f546ac81882f86afb32',
+        lang: 'en',
+        image_type: 'photo',
+        safesearch: 'true',
+        q: queryText,
+        category: photoCategory,
+        orientation: photoOrientation,
+      }
+    });
   };
 
   service.getIndividualPhoto = (id) => {
