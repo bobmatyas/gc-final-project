@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Color Chooser</title>
+  <title>picturePalette</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -12,17 +12,42 @@
   <header class="navigation-container">
     <nav>
       <ul class="navigation-menu">
-        <li><a href="#!/home">Home</a></li>
-        <li><a href="#!/about">About</a></li>
-        <li><a href="#!/photos">Photos</a></li>
+        <li><a href="#" class="logo">picturePalette</a></li>
+        <li><a href="#!/search">Search</a></li>
+        <li><a href="#!/photos">My Photos</a></li>
+        <li><a href="#!/palettes">My Palettes</a></li>
+        <li>
+          <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          </label>
+        </li>
       </ul>
     </nav>
   </header>
   
-  
   <main id="main" data-ng-view>
     <!-- anything configured in the route is going to be injected here -->
   </main>
+
+  <div class="home-text">
+    <h1>What color photos are you looking for?</h1>
+  </div>
+
+  <div class="color-grid">
+      <a href="#"><div class="color" id="red"></div></a>      
+      <a href="#"><div class="color" id="orange"></div></a>
+      <a href="#"><div class="color" id="yellow"></div></a>
+      <a href="#"><div class="color" id="green"></div></a>
+      <a href="#"><div class="color" id="turquoise"></div></a>
+      <a href="#"><div class="color" id="blue"></div></a>
+      <a href="#"><div class="color" id="lilac"></div></a>
+      <a href="#"><div class="color" id="pink"></div></a>
+      <a href="#"><div class="color" id="white"></div></a>
+      <a href="#"><div class="color" id="black"></div></a>
+      <a href="#"><div class="color" id="grey"></div></a>
+      <a href="#"><div class="color" id="grayscale"></div></a>
+    </div>
 
   <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
   
