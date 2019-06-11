@@ -10,6 +10,7 @@ function PhotosController(PhotoService, $q) {
     ctrl.getIndividualPhoto(4252039);
   };
 
+
   /** 
    * A static array of categories for the search criteria.
    * The category list is provided by Pixabay. 
@@ -38,12 +39,25 @@ function PhotosController(PhotoService, $q) {
     'travel'
   ]; 
 
+
+  /** 
+   * A static array of photo orientations.
+   * The orientation list is provided by Pixabay. 
+  */
+
+  ctrl.photoOrientations = [
+    'all',
+    'horizontal',
+    'vertical'
+  ];
+
+
   // this function gets the photos based on user search criteria
 
-  ctrl.getPhotos = (queryText, photoCategory) => {
+  ctrl.getPhotos = (queryText, photoCategory, photoOrientation) => {
 
     return $q(function(resolve, reject) {
-      PhotoService.getPhotos(queryText, photoCategory)      
+      PhotoService.getPhotos(queryText, photoCategory, photoOrientation)      
         .then( (response) => {
           console.log(response.data.hits);  
           ctrl.photos = response.data.hits;
@@ -89,13 +103,17 @@ angular.module('ColorApp').component('photos', {
 
         <h2>Search</h2>
 
-        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="what type of image?" ng-keypress="($event.charCode==13)? $ctrl.getPhotos($ctrl.homeSearch) : return" />
+        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="what type of image?" ng-keypress="($event.charCode==13)? $ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory, $ctrl.photoOrientation) : return" />
         <select ng-model="$ctrl.photoCategory">
           <option value="" disabled selected hidden>Please Choose... </option>
+          <option value=""></option>
           <option ng-repeat="category in $ctrl.photoCategories" value="{{ category }}"> {{ category.charAt(0).toUpperCase()+ category.substr(1).toLowerCase()  }}</option>
         </select>
 
-        <button class="button-green" ng-click="$ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory)">
+        <select ng-model="$ctrl.photoOrientation"> 
+          <option ng-repeat="orientation in $ctrl.photoOrientations" value="{{ orientation }}"> {{ orientation.charAt(0).toUpperCase()+ orientation.substr(1).toLowerCase()  }}</option>
+        </select>
+        <button class="button-green" ng-click="$ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory, $ctrl.photoOrientation)">
           Search
         </button>
 
