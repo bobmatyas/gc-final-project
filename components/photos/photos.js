@@ -94,6 +94,21 @@ function PhotosController(PhotoService, $q) {
 
   
 
+  ctrl.imageColor = () => {
+      PhotoService.extractColor()
+        .then( (response) => {
+          console.log(`color scheme`);
+          ctrl.colorResponse = response.data;
+          console.log(response);
+          console.log(ctrl.colorResponse);
+          }
+        )
+        .catch( function(error) {
+          console.error(error);
+          throw error;
+        });
+  }
+
 
 }
 
@@ -135,6 +150,8 @@ angular.module('ColorApp').component('photos', {
           <img src="{{ indPhoto.largeImageURL }}" style="max-width: 100%;"/>
         </div>
 
+
+        <button ng-click="$ctrl.imageColor()">Test Button</button>
 
 
 

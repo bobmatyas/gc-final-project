@@ -40,6 +40,23 @@ function PhotoService($http) {
     });
   }
 
+  service.extractColor = () => {
+    console.log("test");
+    return $http.get('https://apicloud-colortag.p.mashape.com/tag-url.json', {
+      headers:{
+        'X-RapidAPI-Host': 'apicloud-colortag.p.rapidapi.com',
+        'X-RapidAPI-Key': '54bc82a03cmshc3794caaabaadcfp1d96b5jsn243d8780d1bd'
+      },
+      params: {
+        url: 'https://cdn.pixabay.com/photo/2019/06/05/02/56/butterfly-4252831_150.jpg'
+      }
+    }).then((response) => {
+      return response.data;
+    }).catch( (error)=>{
+      console.error(error);
+    });
+  }
+
 }
 
 angular.module('ColorApp')
