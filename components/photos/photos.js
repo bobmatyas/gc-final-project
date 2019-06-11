@@ -69,21 +69,19 @@ function PhotosController(PhotoService, $q) {
     });
   }
 
-  ctrl.imageColor = (image) => {
-    return $q(function(resolve, reject) {
-      PhotoService.extractColor(image)
+  ctrl.imageColor = () => {
+      PhotoService.extractColor()
         .then( (response) => {
           console.log(`color scheme`);
           ctrl.colorResponse = response.data;
+          console.log(response);
           console.log(ctrl.colorResponse);
-          resolve();
           }
         )
         .catch( function(error) {
           console.error(error);
           throw error;
         });
-    });
   }
 
 

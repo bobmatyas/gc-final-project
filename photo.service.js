@@ -30,17 +30,21 @@ function PhotoService($http) {
     });
   }
 
-  service.extractColor = (image) => {
-    var request = require('request'),
-      apiKey = 'acc_97e76501eb9cf68',
-      apiSecret = '25aaff8a117e817c40931623f3d17375',
-      imageUrl = 'https://imagga.com/static/images/tagging/wind-farm-538576_640.jpg';
-
-    request.get('https://api.imagga.com/v2/colors?image_url='+encodeURIComponent(imageUrl), function (error, response, body) {
-      console.log('Status:', response.statusCode);
-      console.log('Headers:', JSON.stringify(response.headers));
-      console.log('Response:', body);
-    }).auth(apiKey, apiSecret, true);
+  service.extractColor = () => {
+    console.log("test");
+    return $http.get('https://apicloud-colortag.p.mashape.com/tag-url.json', {
+      headers:{
+        'X-RapidAPI-Host': 'apicloud-colortag.p.rapidapi.com',
+        'X-RapidAPI-Key': '54bc82a03cmshc3794caaabaadcfp1d96b5jsn243d8780d1bd'
+      },
+      params: {
+        url: 'https://cdn.pixabay.com/photo/2019/06/05/02/56/butterfly-4252831_150.jpg'
+      }
+    }).then((response) => {
+      return response.data;
+    }).catch( (error)=>{
+      console.error(error);
+    });
   }
 
 }
