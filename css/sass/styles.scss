@@ -12,4 +12,31 @@ body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
   padding: 5%;
   font-size: 110%;
+  width: 100vw;
+}
+
+#section {
+  width: 100vw;
+}
+
+.main {
+  width: 100vw;
+}
+
+.resultsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cardContainer {
+  width: 300px;
+  background-color: lightgray;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

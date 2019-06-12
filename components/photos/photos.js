@@ -130,9 +130,14 @@ angular.module('ColorApp').component('photos', {
         </button>
         <h2>Photos</h2>
         <h2>List of Photos from Pixabay API</h2>
-        <div ng-if="$ctrl.photos.length >= 1" ng-repeat="photo in $ctrl.photos">
-          <img src="{{ photo.previewURL }}" />
+
+        <div ng-if="$ctrl.photos.length >= 1" ng-repeat="photo in $ctrl.photos" class="resultsContainer">
+          <div class="cardContainer">
+
+            <img src="{{ photo.previewURL }}" />
+          </div>
         </div>
+
         <div ng-if="$ctrl.photos.length < 1">
           <p style="color: red; font-weight: bold;">No results.</p>
         </div>

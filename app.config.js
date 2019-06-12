@@ -15,7 +15,7 @@ angular
         // Load the home component
         template: "<home></home>"
       })
-      .when("/photos", {
+      .when("/favorites", {
         // Load the quote component
         template: "<photos></photos>"
       })
