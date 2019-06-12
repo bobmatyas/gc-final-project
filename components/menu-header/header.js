@@ -24,7 +24,7 @@ angular.module('ColorApp').component('menuHeader', {
           <li><a href="#!/palettes">My Palettes</a></li>
           <li>
             <label class="switch">
-              <input type="checkbox">
+              <input type="checkbox" ng-click="$ctrl.toggleDark()">
               <span class="slider round"></span>
              </label>
           </li>
