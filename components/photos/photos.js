@@ -130,9 +130,9 @@ angular.module('ColorApp').component('photos', {
         </button>
         <h2>Photos</h2>
         <h2>List of Photos from Pixabay API</h2>
-        
-        <div ng-if="$ctrl.photos.length >= 1" class="resultsContainer">
-          <div class="cardContainer" ng-click="$ctrl.imageColor(photo.largeImageURL)" ng-repeat="photo in $ctrl.photos">
+
+        <div ng-if="$ctrl.photos.length >= 1" ng-repeat="photo in $ctrl.photos" class="resultsContainer">
+          <div class="cardContainer" ng-click="$ctrl.imageColor(photo.largeImageURL)">
             <img class="imageSize" src="{{ photo.largeImageURL }}" />
             <div class="imageTags cardSpec">{{ photo.tags }}</div>
             <div class="imageDetails cardSpec">
