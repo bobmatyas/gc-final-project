@@ -40,7 +40,7 @@ function PhotoService($http) {
     });
   }
 
-  service.extractColor = () => {
+  service.extractColor = (image) => {
     console.log("test");
     return $http.get('https://apicloud-colortag.p.mashape.com/tag-url.json', {
       headers:{
@@ -48,7 +48,7 @@ function PhotoService($http) {
         'X-RapidAPI-Key': '54bc82a03cmshc3794caaabaadcfp1d96b5jsn243d8780d1bd'
       },
       params: {
-        url: 'https://cdn.pixabay.com/photo/2019/06/05/02/56/butterfly-4252831_150.jpg'
+        url: image
       }
     }).then((response) => {
       return response.data;

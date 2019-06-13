@@ -338,7 +338,7 @@ template {
 }
 
 html {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 body {
@@ -348,7 +348,7 @@ body {
   width: 100vw;
 }
 
-#section {
+#photos {
   width: 100vw;
 }
 
@@ -365,13 +365,35 @@ body {
 
 .cardContainer {
   width: 300px;
-  background-color: lightgray;
+  background-color: #f9f6f6;
+  border-radius: 5px;
   padding: 10px;
-  margin: 5px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  -webkit-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
+}
+
+.imageSize {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.imageDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cardSpec {
+  padding: 10px 0;
+  font-weight: 900;
+  color: darkgray;
 }
 
 /*# sourceMappingURL=styles.css.map */
