@@ -32,14 +32,14 @@ function HomeController($scope) {
   ctrl.colors = shuffleArray(ctrl.colors);
 
   //ctrl.selectedColorTrueFalse = true; 
-  ctrl.selectedColor = '';
+  $scope.selectedColor = '';
 
   // try this: https://www.guru99.com/angularjs-events.html
 
-  ctrl.selectColor = (color) => {
+  $scope.selectColor = (color) => {
     console.log('selectColor clicked');
-    ctrl.selectedColor = color;
-    console.log(`Selected Color: ${ctrl.selectedColor}`);
+    $scope.selectedColor = color;
+    console.log(`Selected Color: ${$scope.selectedColor}`);
     ctrl.hideGrid = 1;
   }
 
@@ -56,16 +56,12 @@ angular.module('ColorApp').component('home', {
     </div>
   
       <div class="color-grid" ng-show="!$ctrl.hideGrid">
-        <a href="#" ng-repeat="color in $ctrl.colors" ng-click="$ctrl.selectColor(color)"> 
+        <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)"> 
           <div class="color" id="{{ color }}"></div>
         </a>
-
       </div>
 
-      <p ng-click="$ctrl.selectColor('orange')">Change Color Test</p>
-
-      <p>Color: {{ $ctrl.selectedColor }}</p>
-      <div class="home__search__bar" ng-if="$ctrl.selectedColor"> 
+      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColor}}; padding: 15px;" > 
         <input type="text">
       </div>
 
