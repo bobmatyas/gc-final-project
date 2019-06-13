@@ -55,15 +55,17 @@ angular.module('ColorApp').component('home', {
       <h1>What color photos are you looking for?</h1>
     </div>
   
-      <div class="color-grid" ng-show="!$ctrl.hideGrid">
+      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColor}}; padding: 15px;" > 
+        <input type="text">
+      </div>
+
+      <div class="color-grid  animate-show-hide" ng-hide="$ctrl.hideGrid">
         <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)"> 
           <div class="color" id="{{ color }}"></div>
         </a>
       </div>
 
-      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColor}}; padding: 15px;" > 
-        <input type="text">
-      </div>
+
 
       </section>
     `, // or use templateUrl

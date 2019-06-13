@@ -80,6 +80,27 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  transition: all .02s ease-in-out;
+  height: auto;
+  width: 100%;
+}
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+input[type=text] {
+  width: 100px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 250px;
 }
 
 .color {
