@@ -1,4 +1,4 @@
-function HomeController() {
+function HomeController($scope) {
 
   var ctrl = this;
 
@@ -6,19 +6,19 @@ function HomeController() {
 
   ctrl.colors = ["grayscale", "transparent", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black", "brown"];
 
-  ctrl.selectedColorTrueFalse = true; 
+  //ctrl.selectedColorTrueFalse = true; 
+  ctrl.selectedColor = '';
 
+  // try this: https://www.guru99.com/angularjs-events.html
 
   ctrl.selectColor = (color) => {
-    console.log(ctrl.selectedColorTrueFalse);
-    console.log('clicked');
-    ctrl.selectedColorTrueFalse = true;
+    console.log('selectColor clicked');
     ctrl.selectedColor = color;
-    console.log(ctrl.selectedColor);
-    console.log(ctrl.selectedColorTrueFalse);
+    console.log(`Selected Color: ${ctrl.selectedColor}`);
   }
 
-
+  // angular animations tips: https://forums.asp.net/t/2094767.aspx?AngularJS+How+to+move+a+div+from+bottom+to+up
+  
 }
 
 angular.module('ColorApp').component('home', {
@@ -31,12 +31,15 @@ angular.module('ColorApp').component('home', {
       <div class="color-grid">
         <a href="#" ng-repeat="color in $ctrl.colors" ng-click="$ctrl.selectColor(color)"> 
           <div class="color" id="{{ color }}"></div>
-        </a>      
+        </a>
+
       </div>
 
-      <p>Color: {{ ctrl.selectedColor }}</p>
-      <div class="home__search__bar" ng-if="$ctrl.selectedColorTrueFalse === false"> 
-        <input type="text" ng-model="$ctrl.search">
+      <p ng-click="$ctrl.selectColor('orange')">Change Color Test</p>
+
+      <p>Color: {{ $ctrl.selectedColor }}</p>
+      <div class="home__search__bar" ng-if="$ctrl.selectedColor"> 
+        <input type="text">
       </div>
 
       </section>
