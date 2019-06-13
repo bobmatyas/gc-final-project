@@ -7,23 +7,10 @@
   <title>picturePalette</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body class="{{$root.bodyClass}}">
 
-  <header class="navigation-container">
-    <nav>
-      <ul class="navigation-menu">
-        <li><a href="#" class="logo">picturePalette</a></li>
-        <li><a href="#!/search">Search</a></li>
-        <li><a href="#!/favorites">Favorites</a></li>
-        <li>
-          <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-          </label>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <menu-header></menu-header>
+  
   
   <main id="main" data-ng-view>
     <!-- anything configured in the route is going to be injected here -->
@@ -59,6 +46,7 @@
   <script src="photo.service.js"></script>
 
   <script src="components/home/home.js"></script>
+  <script src="components/menu-header/header.js"></script>
   <script src="components/about/about.js"></script>
   <script src="components/photos/photos.js"></script>
 
