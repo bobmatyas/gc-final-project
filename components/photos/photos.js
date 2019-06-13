@@ -145,10 +145,7 @@ angular.module('ColorApp').component('photos', {
         <div ng-if="$ctrl.photos.length < 1">
           <p style="color: red; font-weight: bold;">No results.</p>
         </div>
-        <h2>TEST: Individual Photo from Pixabay API</h2>
-        <div ng-repeat="indPhoto in $ctrl.indPhoto">
-          <img src="{{ indPhoto.largeImageURL }}" style="max-width: 100%;"/>
-        </div>
+        
         <button ng-click="$ctrl.imageColor()">Test Button</button>
       </section>
     `, // or use templateUrl
