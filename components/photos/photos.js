@@ -146,7 +146,6 @@ angular.module('ColorApp').component('photos', {
           <p style="color: red; font-weight: bold;">No results.</p>
         </div>
         
-        <button ng-click="$ctrl.imageColor()">Test Button</button>
       </section>
     `, // or use templateUrl
   controller: PhotosController
