@@ -20,7 +20,11 @@ angular.module('ColorApp').component('menuHeader', {
         <ul class="navigation-menu">
           <li><a href="#" class="logo">picturePalette</a></li>
           <li><a href="#!/search">Search</a></li>
+<<<<<<< HEAD
           <li><a href="#!/favorites">Favorites</a></li>
+=======
+          <li><a href="#!/favorites">My Favorites</a></li>
+>>>>>>> master
           <li>
             <label class="switch">
               <input type="checkbox" ng-click="$ctrl.toggleDark()">
