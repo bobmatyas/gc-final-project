@@ -74,34 +74,15 @@ function MainSearchController(PhotoService, $q, $scope) {
    }
  
 
-   ctrl.imageColor = (image) => {
-    PhotoService.extractColor(image)
-      .then( (response) => {
-        console.log(`color scheme`);
-        ctrl.colorResponse = response.data;
-        console.log(response);
-        console.log(ctrl.colorResponse);
-        }
-      )
-      .catch( function(error) {
-        console.error(error);
-        throw error;
-      });
-}
 
-ctrl.addFavorite = (favoriteParam) => {
-  PhotoService.setFavorites(favoriteParam);
-  console.log("you clicked it");
+  ctrl.addFavorite = (favoriteParam) => {
+    PhotoService.setFavorites(favoriteParam);
+    console.log("you clicked it");
+  }
 
-}
-
-ctrl.individualPhotoSave = (photo) => {
-  console.log(`individual photo function called`);
-  console.log(photo);
-  PhotoService.photo = photo;
-  console.log(PhotoService.photo);
-
-}
+  ctrl.individualPhotoSave = (photo) => {
+    PhotoService.photo = photo;
+  }
  
    // angular animations tips: https://forums.asp.net/t/2094767.aspx?AngularJS+How+to+move+a+div+from+bottom+to+up
 
@@ -135,7 +116,7 @@ angular.module('ColorApp').component('mainSearch', {
             <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
             <i class="material-icons">cloud_download</i>
             </a>
-            <img class="imageSize" src="{{ photo.largeImageURL }}" ng-click="$ctrl.imageColor(photo.largeImageURL)"/>
+            <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
             <div class="imageTags cardSpec">{{ photo.tags }}</div>
             <div class="imageDetails cardSpec">
               <div>Downloads: {{ photo.downloads }}</div>

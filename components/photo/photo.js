@@ -6,9 +6,26 @@ function PhotoController(PhotoService, $q) {
     ctrl.image = PhotoService.photo;
 
 
-    ctrl.$onInit = function() {
-        console.log(ctrl.image);
+    // ctrl.$onInit = function() {
+    //     console.log(ctrl.image);
+    // }
+
+    ctrl.imageColor = (image) => {
+      PhotoService.extractColor(image)
+        .then( (response) => {
+          console.log(`color scheme`);
+          console.log(response);
+          ctrl.colorScheme = response.tags;
+          console.log(response.data);
+          }
+        )
+        .catch( function(error) {
+          console.error(error);
+          throw error;
+        });
     }
+
+    
   };  
 
   
@@ -16,7 +33,7 @@ function PhotoController(PhotoService, $q) {
     template: `
         <div class="indiv-image">
             <-- how to show clicked photo only -->
-            <img class="imageSize" ng-src="{{ $ctrl.image }}" />
+            <img class="imageSize" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image)" />
             <-- how to set download button -->
             
             <button class="download">Download</button>
@@ -25,7 +42,9 @@ function PhotoController(PhotoService, $q) {
             <h2>Complimentary Colors</h2>
             <div id="color-palette">
                 <--how to pull complimentary colors-->
-                <p>{{ color }}</p>
+              <div ng-repeat="color in $ctrl.colorScheme">
+                <p>Color: {{ color.label }} / {{ color.color }}</p>
+              </div>
             </div>
             <--how to set up to favorites-->
             <button class="save-palette">Save Palette</button>
