@@ -11,13 +11,12 @@ function PhotoController(PhotoService, $q) {
     // }
 
     ctrl.imageColor = (image) => {
-      console.log(ctrl.image);
       PhotoService.extractColor(image)
         .then( (response) => {
           console.log(`color scheme`);
-          ctrl.colorResponse = response.data;
           console.log(response);
-          console.log(ctrl.colorResponse);
+          ctrl.colorScheme = response.tags;
+          console.log(response.data);
           }
         )
         .catch( function(error) {
@@ -43,7 +42,9 @@ function PhotoController(PhotoService, $q) {
             <h2>Complimentary Colors</h2>
             <div id="color-palette">
                 <--how to pull complimentary colors-->
-                <p>{{ color }}</p>
+              <div ng-repeat="color in $ctrl.colorScheme">
+                <p>Color: {{ color.label }} / {{ color.color }}</p>
+              </div>
             </div>
             <--how to set up to favorites-->
             <button class="save-palette">Save Palette</button>

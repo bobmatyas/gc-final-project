@@ -74,11 +74,15 @@ function MainSearchController(PhotoService, $q, $scope) {
    }
  
 
+
   ctrl.addFavorite = (favoriteParam) => {
     PhotoService.setFavorites(favoriteParam);
     console.log("you clicked it");
   }
 
+  ctrl.individualPhotoSave = (photo) => {
+    PhotoService.photo = photo;
+  }
  
    // angular animations tips: https://forums.asp.net/t/2094767.aspx?AngularJS+How+to+move+a+div+from+bottom+to+up
 
