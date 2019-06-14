@@ -6,9 +6,27 @@ function PhotoController(PhotoService, $q) {
     ctrl.image = PhotoService.photo;
 
 
-    ctrl.$onInit = function() {
-        console.log(ctrl.image);
+    // ctrl.$onInit = function() {
+    //     console.log(ctrl.image);
+    // }
+
+    ctrl.imageColor = (image) => {
+      console.log(ctrl.image);
+      PhotoService.extractColor(image)
+        .then( (response) => {
+          console.log(`color scheme`);
+          ctrl.colorResponse = response.data;
+          console.log(response);
+          console.log(ctrl.colorResponse);
+          }
+        )
+        .catch( function(error) {
+          console.error(error);
+          throw error;
+        });
     }
+
+    
   };  
 
   
@@ -16,7 +34,7 @@ function PhotoController(PhotoService, $q) {
     template: `
         <div class="indiv-image">
             <-- how to show clicked photo only -->
-            <img class="imageSize" ng-src="{{ $ctrl.image }}" />
+            <img class="imageSize" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image)" />
             <-- how to set download button -->
             
             <button class="download">Download</button>
