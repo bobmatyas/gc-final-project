@@ -19,7 +19,6 @@ angular.module('ColorApp').component('menuHeader', {
       <nav>
         <ul class="navigation-menu">
           <li><a href="#" class="logo">picturePalette</a></li>
-          <li><a href="#!/search">Search</a></li>
           <li><a href="#!/favorites">My Favorites</a></li>
           <li>
             <label class="switch">
