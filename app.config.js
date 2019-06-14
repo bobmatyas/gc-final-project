@@ -16,8 +16,12 @@ angular
         template: "<home></home>"
       })
       .when("/favorites", {
-        // Load the quote component
+        // Load the photos component
         template: "<photos></photos>"
+      })
+      .when("/photo", {
+        // Load the photo component
+        template: "<photo></photo>"
       })
       .otherwise( {
         //otherwise, take me home

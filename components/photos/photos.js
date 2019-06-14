@@ -95,6 +95,7 @@ function PhotosController(PhotoService, $q) {
   
 
   ctrl.imageColor = (image) => {
+      // PhotoService.selectedColor(image)
       PhotoService.extractColor(image)
         .then( (response) => {
           console.log(`color scheme`);
@@ -132,13 +133,14 @@ angular.module('ColorApp').component('photos', {
         <h2>List of Photos from Pixabay API</h2>
 
         <div ng-if="$ctrl.photos.length >= 1" class="resultsContainer">
-          <div class="cardContainer" ng-click="$ctrl.imageColor(photo.largeImageURL)" ng-repeat="photo in $ctrl.photos">
-            <img class="imageSize" src="{{ photo.largeImageURL }}" />
+          <div class="cardContainer" ng-repeat="photo in $ctrl.photos">
+            <img class="imageSize" ng-click="$ctrl.imageColor(photo.largeImageURL)" ng-src="{{ photo.largeImageURL }}" />
             <div class="imageTags cardSpec">{{ photo.tags }}</div>
             <div class="imageDetails cardSpec">
               <div>Downloads: {{ photo.downloads }}</div>
               <div>Views: {{ photo.views }}</div>
             </div>
+            <a href="#!/photo">Choose Photo</a>
           </div>
         </div>
 
@@ -148,5 +150,8 @@ angular.module('ColorApp').component('photos', {
         
       </section>
     `, // or use templateUrl
-  controller: PhotosController
+  controller: PhotosController,
+  bindings: {
+    imageColor: "&",
+  } 
 });

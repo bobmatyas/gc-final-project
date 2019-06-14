@@ -57,6 +57,12 @@ function PhotoService($http) {
     });
   }
 
+  service.photo = '';
+  service.selectedPhoto = (image) => {
+    console.log('testing photo service');
+    service.photo = image;
+  }
+
 }
 
 angular.module('ColorApp')

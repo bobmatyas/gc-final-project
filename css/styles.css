@@ -395,6 +395,11 @@ a {
   text-decoration: none;
 }
 
+li:first-child {
+  margin-right: auto;
+  font-size: 32px;
+}
+
 .navigation-menu {
   display: flex;
   justify-content: flex-end;
