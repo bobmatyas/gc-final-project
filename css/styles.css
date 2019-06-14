@@ -484,8 +484,12 @@ input[type=text]:focus {
   background-color: black;
 }
 
-#grey {
-  background-color: grey;
+#gray {
+  background-color: gray;
+}
+
+#brown {
+  background-color: brown;
 }
 
 #grayscale {

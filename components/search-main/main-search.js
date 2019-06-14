@@ -71,7 +71,7 @@ function MainSearchController(PhotoService, $q, $scope) {
 
    // these come direct from the Pixabay API
 
-   ctrl.colors = ["grayscale", "transparent", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black", "brown"];
+   ctrl.colors = ["grayscale", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black", "brown"];
 
 
    // randomize color array -> Fisher–Yates shuffle algorithm
