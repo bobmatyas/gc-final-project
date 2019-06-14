@@ -48,7 +48,7 @@ function SearchBarController() {
 angular.module('ColorApp').component('searchBar', {
   template: `
         <h2>Search</h2>
-        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="what type of image?" ng-keypress="($event.charCode==13)? $ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory, $ctrl.photoOrientation) : return" />
+        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="what type of image?" ng-keypress="($event.charCode==13)? $ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.selectedColor}) : return" />
         <select ng-model="$ctrl.photoCategory">
           <option value="" disabled selected hidden>Please Choose... </option>
           <option value=""></option>
@@ -57,13 +57,14 @@ angular.module('ColorApp').component('searchBar', {
         <select ng-model="$ctrl.photoOrientation"> 
           <option ng-repeat="orientation in $ctrl.photoOrientations" value="{{ orientation }}"> {{ orientation.charAt(0).toUpperCase()+ orientation.substr(1).toLowerCase()  }}</option>
         </select>
-        <button class="button-green" ng-click="$ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation})">
+        <button class="button-green" ng-click="$ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.color,})">
           Search
         </button>
-        
+       
     `, // or use templateUrl
   controller: SearchBarController,
   bindings: {
     getPhotos: "&",
+    color: "<",
   }
 });

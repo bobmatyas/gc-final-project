@@ -12,10 +12,10 @@ function MainSearchController(PhotoService, $q, $scope) {
 
   // this function gets the photos based on user search criteria
 
-  ctrl.getPhotos = (queryText, photoCategory, photoOrientation) => {
+  ctrl.getPhotos = (queryText, photoCategory, photoOrientation, selectedColor) => {
 
     return $q(function(resolve, reject) {
-      PhotoService.getPhotos(queryText, photoCategory, photoOrientation)      
+      PhotoService.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)      
         .then( (response) => {
           console.log(response.data.hits);  
           ctrl.photos = response.data.hits;
@@ -25,6 +25,7 @@ function MainSearchController(PhotoService, $q, $scope) {
         ) 
         .catch( function(error) {
           console.error(error);
+          reject();
           throw error;
         });
     });
@@ -115,8 +116,8 @@ angular.module('ColorApp').component('mainSearch', {
   template: `
       <section id="photos">
 
-      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColor}}; padding: 15px;" > 
-        <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation)" sort-by="$ctrl.sortBy(propertyName, sortOrder)" search-completed="$ctrl.searchCompleted"></search-bar>
+      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColor }}; padding: 15px;" > 
+        <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)" color="selectedColor"></search-bar>
       </div>
 
       <div class="color-grid  animate-show-hide" ng-hide="$ctrl.hideGrid">
@@ -130,8 +131,8 @@ angular.module('ColorApp').component('mainSearch', {
         <div ng-if="$ctrl.photos.length >= 1" class="resultsContainer">
         
 
-          <div class="cardContainer" ng-click="$ctrl.imageColor(photo.largeImageURL)" ng-repeat="photo in $ctrl.photos">
-            <img class="imageSize" src="{{ photo.largeImageURL }}" />
+          <div class="cardContainer" ng-click="$ctrl.imageColor(photo.largeImageURL)" ng-if="$ctrl.photos.length >= 1" ng-repeat="photo in $ctrl.photos">
+            <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
             <div class="imageTags cardSpec">{{ photo.tags }}</div>
             <div class="imageDetails cardSpec">
               <div>Downloads: {{ photo.downloads }}</div>
