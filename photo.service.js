@@ -3,7 +3,7 @@ function PhotoService($http) {
   const service = this;
   service.favoriteArray = []
 
-  service.getPhotos = (queryText, photoCategory, photoOrientation) => {
+  service.getPhotos = (queryText, photoCategory, photoOrientation, selectedColor) => {
     return $http.get('https://pixabay.com/api/', {
       params: {
         key: '12720616-1db5a8f546ac81882f86afb32',
@@ -13,6 +13,7 @@ function PhotoService($http) {
         q: queryText,
         category: photoCategory,
         orientation: photoOrientation,
+        colors: selectedColor,
       }
     });
   };
@@ -49,6 +50,12 @@ function PhotoService($http) {
   }
   service.setRemoveFavorites = (removeParam) =>{
     service.favoriteArray.splice(service.favoriteArray.indexOf(removeParam), 1);
+  }
+  
+  service.photo = '';
+  service.selectedPhoto = (image) => {
+    console.log('testing photo service');
+    service.photo = image;
   }
 
 }

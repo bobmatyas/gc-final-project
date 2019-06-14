@@ -66,6 +66,11 @@ a {
   text-decoration: none;
 }
 
+li:first-child {
+  margin-right: auto;
+  font-size: 32px;
+}
+
 .navigation-menu {
     display: flex;
     justify-content: flex-end;
@@ -80,6 +85,27 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  transition: all .02s ease-in-out;
+  height: auto;
+  width: 100%;
+}
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+input[type=text] {
+  width: 100px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+input[type=text]:focus {
+  width: 250px;
 }
 
 .color {
@@ -133,8 +159,12 @@ a {
   background-color: black;
 }
 
-#grey {
-  background-color: grey;
+#gray {
+  background-color: gray;
+}
+
+#brown {
+  background-color: brown;
 }
 
 #grayscale {

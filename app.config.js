@@ -19,6 +19,10 @@ angular
         // Load the quote component
         template: "<favorites-page></favorites-page>"
       })
+      .when("/photo", {
+        // Load the photo component
+        template: "<photo></photo>"
+      })
       .otherwise( {
         //otherwise, take me home
         redirectTo: "/home"

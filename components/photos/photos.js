@@ -10,48 +10,6 @@ function PhotosController(PhotoService, $q) {
   //   ctrl.getIndividualPhoto(4252039);
   // };
 
-
-  /** 
-   * A static array of categories for the search.
-   * The category list is provided by Pixabay. 
-  */
-
-  ctrl.photoCategories = [
-    'animals', 
-    'backgrounds', 
-    'buildings', 
-    'business', 
-    'computer', 
-    'education', 
-    'fashion', 
-    'feelings', 
-    'food', 
-    'health', 
-    'industry', 
-    'music', 
-    'nature', 
-    'people', 
-    'places', 
-    'religion', 
-    'science', 
-    'sports', 
-    'transportation', 
-    'travel'
-  ]; 
-
-
-  /** 
-   * A static array of photo orientations.
-   * The orientation list is provided by Pixabay. 
-  */
-
-  ctrl.photoOrientations = [
-    'all',
-    'horizontal',
-    'vertical'
-  ];
-
-
   // this function gets the photos based on user search criteria
 
   ctrl.getPhotos = (queryText, photoCategory, photoOrientation) => {
@@ -107,7 +65,7 @@ function PhotosController(PhotoService, $q) {
 
   
 
-  ctrl.imageColor = () => {
+  ctrl.imageColor = (image) => {
       PhotoService.extractColor(image)
         .then( (response) => {
           console.log(`color scheme`);
@@ -134,23 +92,13 @@ function PhotosController(PhotoService, $q) {
 angular.module('ColorApp').component('photos', {
   template: `
       <section id="photos">
-        <h2>Search</h2>
-        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="what type of image?" ng-keypress="($event.charCode==13)? $ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory, $ctrl.photoOrientation) : return" />
-        <select ng-model="$ctrl.photoCategory">
-          <option value="" disabled selected hidden>Please Choose... </option>
-          <option value=""></option>
-          <option ng-repeat="category in $ctrl.photoCategories" value="{{ category }}"> {{ category.charAt(0).toUpperCase()+ category.substr(1).toLowerCase()  }}</option>
-        </select>
-        <select ng-model="$ctrl.photoOrientation"> 
-          <option ng-repeat="orientation in $ctrl.photoOrientations" value="{{ orientation }}"> {{ orientation.charAt(0).toUpperCase()+ orientation.substr(1).toLowerCase()  }}</option>
-        </select>
-        <button class="button-green" ng-click="$ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory, $ctrl.photoOrientation)">
-          Search
-        </button>
-        <h2>Photos</h2>
-        <h2>List of Photos from Pixabay API</h2>
+        <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation)" sort-by="$ctrl.sortBy(propertyName, sortOrder)" search-completed="$ctrl.searchCompleted"></search-bar>
+        
+
+        <h2 ng-if="$ctrl.photos.length >= 1">Results</h2>
 
         <div ng-if="$ctrl.photos.length >= 1" class="resultsContainer">
+
           <div class="cardContainer" ng-repeat="photo in $ctrl.photoList">
             <div class="favorite" ng-click="$ctrl.addFavorite(photo); favorite=true">
               <i ng-hide="favorite" class="material-icons favoriteIcon whiteIcon" >favorite</i>
@@ -166,13 +114,17 @@ angular.module('ColorApp').component('photos', {
               <div>Downloads: {{ photo.downloads }}</div>
               <div>Views: {{ photo.views }}</div>
             </div>
+            <a href="#!/photo">Choose Photo</a>
           </div>
         </div>
 
         <div ng-if="$ctrl.photos.length < 1">
-          <p style="color: red; font-weight: bold;">No results.</p>
+          <h3 style="color: red; font-weight: bold;">No results.</h3>
         </div>
       </section>
     `, // or use templateUrl
-  controller: PhotosController
+  controller: PhotosController,
+  bindings: {
+    imageColor: "&",
+  } 
 });
