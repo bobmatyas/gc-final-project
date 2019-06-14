@@ -1,4 +1,4 @@
-function PhotosController(PhotoService, $q) {
+function MainSearchController(PhotoService, $q, $scope) {
   var ctrl = this;
 
   // retrieve photos on initial page load -- mainly for testing
@@ -68,13 +68,62 @@ function PhotosController(PhotoService, $q) {
   }
 
 
+   // these come direct from the Pixabay API
+
+   ctrl.colors = ["grayscale", "transparent", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black", "brown"];
+
+
+   // randomize color array -> Fisher–Yates shuffle algorithm
+
+   var shuffleArray = function(array) {
+   var m = array.length, t, i;
+ 
+   // While there remain elements to shuffle
+   while (m) {
+     // Pick a remaining element…
+     i = Math.floor(Math.random() * m--);
+ 
+     // And swap it with the current element.
+     t = array[m];
+     array[m] = array[i];
+     array[i] = t;
+   }
+ 
+   return array;
+   }
+   
+   ctrl.colors = shuffleArray(ctrl.colors);
+ 
+   // this part sets the color to search by
+
+   $scope.selectedColor = '';
+ 
+   $scope.selectColor = (color) => {
+     console.log('selectColor clicked');
+     $scope.selectedColor = color;
+     console.log(`Selected Color: ${$scope.selectedColor}`);
+     ctrl.hideGrid = 1;
+   }
+ 
+ 
+   // angular animations tips: https://forums.asp.net/t/2094767.aspx?AngularJS+How+to+move+a+div+from+bottom+to+up
+
+
 }
 
-angular.module('ColorApp').component('photos', {
+angular.module('ColorApp').component('mainSearch', {
   template: `
       <section id="photos">
+
+      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColor}}; padding: 15px;" > 
         <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation)" sort-by="$ctrl.sortBy(propertyName, sortOrder)" search-completed="$ctrl.searchCompleted"></search-bar>
-        
+      </div>
+
+      <div class="color-grid  animate-show-hide" ng-hide="$ctrl.hideGrid">
+        <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)"> 
+          <div class="color" id="{{ color }}"></div>
+        </a>
+      </div>
 
         <h2 ng-if="$ctrl.photos.length >= 1">Results</h2>
 
@@ -97,5 +146,5 @@ angular.module('ColorApp').component('photos', {
         
       </section>
     `, // or use templateUrl
-  controller: PhotosController
+  controller: MainSearchController
 });
