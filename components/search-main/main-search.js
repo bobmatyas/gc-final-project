@@ -132,8 +132,8 @@ angular.module('ColorApp').component('mainSearch', {
               <i ng-show="favorite" class="material-icons favoriteIcon redIcon" >favorite</i>
               <i class="material-icons favoriteIcon redIcon">favorite_border</i>
             </div>
-            <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-            <i class="material-icons">cloud_download</i>
+            <a ng-href="{{ photo.largeImageURL }}" download>
+              <i class="material-icons">cloud_download</i>
             </a>
             <img class="imageSize" src="{{ photo.largeImageURL }}" ng-click="$ctrl.imageColor(photo.largeImageURL)"/>
             <div class="imageTags cardSpec">{{ photo.tags }}</div>

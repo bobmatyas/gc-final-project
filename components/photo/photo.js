@@ -15,11 +15,7 @@ function PhotoController(PhotoService, $q) {
   angular.module('ColorApp').component('photo', {
     template: `
         <div class="indiv-image">
-            <-- how to show clicked photo only -->
             <img class="imageSize" ng-src="{{ $ctrl.image }}" />
-            <-- how to set download button -->
-            
-            <button class="download">Download</button>
         </div>
         <div class="color-palette">
             <h2>Complimentary Colors</h2>
