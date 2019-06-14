@@ -86,6 +86,13 @@ function PhotosController(PhotoService, $q) {
 
   }
 
+  ctrl.individualPhotoSave = (photo) => {
+    console.log(`individual photo function called`);
+    console.log(photo);
+    PhotoService.photo = photo;
+    console.log(PhotoService.photo);
+
+  }
 
 }
 
@@ -114,7 +121,7 @@ angular.module('ColorApp').component('photos', {
               <div>Downloads: {{ photo.downloads }}</div>
               <div>Views: {{ photo.views }}</div>
             </div>
-            <a href="#!/photo">Choose Photo</a>
+            <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
           </div>
         </div>
 
