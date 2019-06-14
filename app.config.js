@@ -7,17 +7,17 @@ angular
   .config(["$routeProvider", ($routeProvider) => {
     $routeProvider
       // When the user visits the display route...
-      .when("/about", {
+      .when("/search", {
         // Load the about component
-        template: "<about></about>"
+        template: "<photos></photos>"
       })
       .when("/home", {
         // Load the home component
         template: "<home></home>"
       })
       .when("/favorites", {
-        // Load the photos component
-        template: "<photos></photos>"
+        // Load the quote component
+        template: "<favorites-page></favorites-page>"
       })
       .when("/photo", {
         // Load the photo component
