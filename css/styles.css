@@ -549,4 +549,19 @@ li {
   text-align: center;
 }
 
+.favorite {
+  transform: translateX(230px) translateY(-150px);
+  position: absolute;
+}
+
+.favoriteIcon {
+  position: absolute;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.contentContainer {
+  width: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */

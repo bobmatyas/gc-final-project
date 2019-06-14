@@ -1,6 +1,7 @@
 function PhotoService($http) { 
   
   const service = this;
+  service.favoriteArray = []
 
   service.getPhotos = (queryText, photoCategory, photoOrientation) => {
     return $http.get('https://pixabay.com/api/', {
@@ -16,29 +17,14 @@ function PhotoService($http) {
     });
   };
 
-  service.getIndividualPhoto = (id) => {
-    return $http.get('https://pixabay.com/api/?', {
-      params: {
-        key: '12720616-1db5a8f546ac81882f86afb32', 
-        id: id,
-      }
-    });
-  }   
-
-  service.getColorPalette = (image) => {
-    let data = { 'url': 'https://pixabay.com/get/52e2d0414a51a514f6da8c7dda79367c123ddee352576c4870297bd49644c65fb0_1280.jpg'};
-    data = JSON.stringify(data);
-    return $http({
-      url: "https://colors.rmotr.com/api/extract",
-      headers: {
-        'content-type': 'application/json',
-      },
-      method: "POST",
-      data: data, 
-    }).then((response) => {
-      return response.data;
-    });
-  }
+  // service.getIndividualPhoto = (id) => {
+  //   return $http.get('https://pixabay.com/api/?', {
+  //     params: {
+  //       key: '12720616-1db5a8f546ac81882f86afb32', 
+  //       id: id,
+  //     }
+  //   });
+  // }   
 
   service.extractColor = (image) => {
     console.log("test");
@@ -55,6 +41,14 @@ function PhotoService($http) {
     }).catch( (error)=>{
       console.error(error);
     });
+  }
+
+  service.setFavorites = (favoriteParam) =>{
+    service.favoriteArray.push(favoriteParam);
+    console.log(service.favoriteArray)
+  }
+  service.setRemoveFavorites = (removeParam) =>{
+    service.favoriteArray.splice(service.favoriteArray.indexOf(removeParam), 1);
   }
 
 }

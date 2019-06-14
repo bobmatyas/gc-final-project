@@ -7,9 +7,9 @@ angular
   .config(["$routeProvider", ($routeProvider) => {
     $routeProvider
       // When the user visits the display route...
-      .when("/about", {
+      .when("/search", {
         // Load the about component
-        template: "<about></about>"
+        template: "<photos></photos>"
       })
       .when("/home", {
         // Load the home component
@@ -17,7 +17,7 @@ angular
       })
       .when("/favorites", {
         // Load the quote component
-        template: "<photos></photos>"
+        template: "<favorites-page></favorites-page>"
       })
       .otherwise( {
         //otherwise, take me home
