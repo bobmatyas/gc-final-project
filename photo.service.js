@@ -2,7 +2,7 @@ function PhotoService($http) {
   
   const service = this;
 
-  service.getPhotos = (queryText, photoCategory, photoOrientation) => {
+  service.getPhotos = (queryText, photoCategory, photoOrientation, selectedColor) => {
     return $http.get('https://pixabay.com/api/', {
       params: {
         key: '12720616-1db5a8f546ac81882f86afb32',
@@ -12,6 +12,7 @@ function PhotoService($http) {
         q: queryText,
         category: photoCategory,
         orientation: photoOrientation,
+        colors: selectedColor,
       }
     });
   };
