@@ -1,14 +1,6 @@
 function MainSearchController(PhotoService, $q, $scope) {
+
   var ctrl = this;
-
-  // retrieve photos on initial page load -- mainly for testing
-
-  // ctrl.$onInit = function() {
-
-  //   // ctrl.getPhotos();
-  //   ctrl.indPhoto = '';
-  //   ctrl.getIndividualPhoto(4252039);
-  // };
 
   // this function gets the photos based on user search criteria
 
@@ -32,49 +24,16 @@ function MainSearchController(PhotoService, $q, $scope) {
   }
 
 
-  // temporarily get individual photo
-
-  ctrl.getIndividualPhoto = (id) => {
-    return $q(function(resolve, reject) {
-      PhotoService.getIndividualPhoto(id)
-        .then( (response) => {
-          console.log(`individual photo called`);
-          ctrl.indPhoto = response.data.hits;
-          console.log(ctrl.indPhoto);
-          resolve();
-          }
-        )
-        .catch( function(error) {
-          console.error(error);
-          throw error;
-        });
-    });
-  }
-
-  
-
-  ctrl.imageColor = (image) => {
-      PhotoService.extractColor(image)
-        .then( (response) => {
-          console.log(`color scheme`);
-          ctrl.colorResponse = response.data;
-          console.log(response);
-          console.log(ctrl.colorResponse);
-          }
-        )
-        .catch( function(error) {
-          console.error(error);
-          throw error;
-        });
-  }
-
-
    // these come direct from the Pixabay API
 
    ctrl.colors = ["grayscale", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black", "brown"];
 
 
-   // randomize color array -> Fisher–Yates shuffle algorithm
+   /**
+    * 
+    * This randomizes the color array. It uses the Fisher–Yates shuffle algorithm
+    * 
+    * */ 
 
    var shuffleArray = function(array) {
    var m = array.length, t, i;
@@ -95,7 +54,15 @@ function MainSearchController(PhotoService, $q, $scope) {
    
    ctrl.colors = shuffleArray(ctrl.colors);
  
-   // this part sets the color to search by
+   /**
+    * This section is storing the selected color. It uses $scope so that ng-repeat works. If it
+    * isn't $scope it seemed as though there was an issue with ng-repeat creating its own scope
+    * each time.
+    * 
+    * The 'selectedColor' value is later passed to the search-bar component which then passes it
+    * back up when the function is called from within search-bar (the child component).
+    * 
+    *  */ 
 
    $scope.selectedColor = '';
  
