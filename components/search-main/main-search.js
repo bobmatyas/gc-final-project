@@ -105,6 +105,7 @@ angular.module('ColorApp').component('mainSearch', {
               <div>Downloads: {{ photo.downloads }}</div>
               <div>Views: {{ photo.views }}</div>
             </div>
+            <a href="#!/photo">Choose Photo</a>
           </div>
         </div>
 
