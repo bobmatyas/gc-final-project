@@ -115,19 +115,7 @@ function PhotosController(PhotoService, $q) {
 angular.module('ColorApp').component('photos', {
   template: `
       <section id="photos">
-        <h2>Search</h2>
-        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="what type of image?" ng-keypress="($event.charCode==13)? $ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory, $ctrl.photoOrientation) : return" />
-        <select ng-model="$ctrl.photoCategory">
-          <option value="" disabled selected hidden>Please Choose... </option>
-          <option value=""></option>
-          <option ng-repeat="category in $ctrl.photoCategories" value="{{ category }}"> {{ category.charAt(0).toUpperCase()+ category.substr(1).toLowerCase()  }}</option>
-        </select>
-        <select ng-model="$ctrl.photoOrientation"> 
-          <option ng-repeat="orientation in $ctrl.photoOrientations" value="{{ orientation }}"> {{ orientation.charAt(0).toUpperCase()+ orientation.substr(1).toLowerCase()  }}</option>
-        </select>
-        <button class="button-green" ng-click="$ctrl.getPhotos($ctrl.photoSearch, $ctrl.photoCategory, $ctrl.photoOrientation)">
-          Search
-        </button>
+        <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation)" sort-by="$ctrl.sortBy(propertyName, sortOrder)" search-completed="$ctrl.searchCompleted"></search-bar>
         <h2>Photos</h2>
         <h2>List of Photos from Pixabay API</h2>
 
