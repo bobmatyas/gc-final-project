@@ -107,24 +107,26 @@ angular.module('ColorApp').component('mainSearch', {
 
         <div ng-if="$ctrl.photos.length >= 1" class="resultsContainer">
 
-          <div class="cardContainer" ng-repeat="photo in $ctrl.photos">
-            <div class="favorite" ng-click="$ctrl.addFavorite(photo); favorite=true">
-              <i ng-hide="favorite" class="material-icons favoriteIcon whiteIcon" >favorite</i>
-              <i ng-show="favorite" class="material-icons favoriteIcon redIcon" >favorite</i>
-              <i class="material-icons favoriteIcon redIcon">favorite_border</i>
-            </div>
-            <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-            <i class="material-icons">cloud_download</i>
-            </a>
-            <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
-            <div class="imageTags cardSpec">{{ photo.tags }}</div>
-            <div class="imageDetails cardSpec">
-              <div>Downloads: {{ photo.downloads }}</div>
-              <div>Views: {{ photo.views }}</div>
-            </div>
-            <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
-          </div>
-        </div>
+          <photo-card ng-repeat="photo in $ctrl.photos" photo="2"></photo-card>
+
+          <div class="cardContainer" ng-repeat="photo in $ctrl.photos"> 
+  <div class="favorite" ng-click="$ctrl.addFavorite(photo); favorite=true">
+    <i ng-hide="favorite" class="material-icons favoriteIcon whiteIcon" >favorite</i>
+    <i ng-show="favorite" class="material-icons favoriteIcon redIcon" >favorite</i>
+    <i class="material-icons favoriteIcon redIcon">favorite_border</i>
+  </div>
+  <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
+  <i class="material-icons">cloud_download</i>
+  </a>
+  <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
+  <div class="imageTags cardSpec">{{ photo.tags }}</div>
+  <div class="imageDetails cardSpec">
+    <div>Downloads: {{ photo.downloads }}</div>
+    <div>Views: {{ photo.views }}</div>
+  </div>
+  <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
+</div>
+</div>
 
         <div ng-if="$ctrl.photos.length < 1">
           <h3 style="color: red; font-weight: bold;">No results.</h3>
