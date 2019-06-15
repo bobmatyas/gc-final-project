@@ -57,7 +57,7 @@ angular.module('ColorApp').component('searchBar', {
         <select ng-model="$ctrl.photoOrientation"> 
           <option ng-repeat="orientation in $ctrl.photoOrientations" value="{{ orientation }}"> {{ orientation.charAt(0).toUpperCase()+ orientation.substr(1).toLowerCase()  }}</option>
         </select>
-        <button class="button-green" ng-click="$ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.color,})">
+        <button class="button" ng-click="$ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.color,})">
           Search
         </button>
        

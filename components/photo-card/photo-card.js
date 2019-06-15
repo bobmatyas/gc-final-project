@@ -6,32 +6,49 @@ function PhotoCardController() {
 }
 
 angular.module('ColorApp').component('photoCard', {
-  template: `          
-    <div class="favorite" ng-click="$ctrl.addFavorite({favorite: $ctrl.photo})">
-      <i ng-hide="favorite" class="material-icons favoriteIcon whiteIcon" >favorite</i>
-      <i ng-show="favorite" class="material-icons favoriteIcon redIcon" >favorite</i>
-      <i class="material-icons favoriteIcon redIcon">favorite_border</i>
+  template: ` 
+  
+    <div class="card__image__container" style="background-image: url({{ $ctrl.photoWeb }});" ng-click="$ctrl.individualPhotoSave({photo: $ctrl.photo})">
+
     </div>
-    <a href="{{ $ctrl.photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-    <i class="material-icons">cloud_download</i>
-    </a>
-    <img class="imageSize" ng-src="{{ $ctrl.photo }}" />
-    <div class="imageTags cardSpec">{{ $ctrl.tags }}</div>
-    <div class="imageDetails cardSpec">
-      <div>Downloads: {{ $ctrl.downloads }}</div>
-      <div>Views: {{ $ctrl.views }}</div>
-    </div>
+
+    <div class="card__info__box">
     
-    <p ng-click="$ctrl.individualPhotoSave({photo: $ctrl.photo})"><a href="#!/photo">Choose Photo</a></p>
+      <div class="card__info__box__favorite">
+        <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite({favorite: $ctrl.photo})"></i>
+      </div>
+
+      <div class="card__info__box__popularity">
+        <h3>Popularity</h3>
+
+        <p>
+          <strong>Downloads:</strong>  {{ $ctrl.downloads | number}} <br />
+          <strong>Views:</strong> {{ $ctrl.views | number }}
+        </p>
+
+        <h3 ng-if="$ctrl.tags">Tags</h3>
+
+        <p ng-if="$ctrl.tags">{{ $ctrl.tags }}</p>
+
+      </div>
+
+      <div class="card__button__holder">
+        <button class="button--card button" style="background-color: {{ $ctrl.color }};" ng-click="$ctrl.individualPhotoSave({photo: $ctrl.photo})">Get Palette</button>
+      </div>
+
+    </div>
+
 
     `, // or use templateUrl
   controller: PhotoCardController,
   bindings: {
     photo: '<',
+    photoWeb: '<',
     tags: '<',
-    download: '<',
+    downloads: '<',
     views: '<',
     individualPhotoSave: '&',
     addFavorite: '&',
+    color: '<',
   }
 });
