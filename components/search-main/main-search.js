@@ -80,6 +80,12 @@ function MainSearchController(PhotoService, $q, $scope) {
     console.log("you clicked it");
   }
 
+  /**
+   * This function takes the individual photo and saves it in the service to
+   * pass onto the individual photo page.
+   * 
+   */
+
   ctrl.individualPhotoSave = (photo) => {
     PhotoService.photo = photo;
   }
@@ -107,26 +113,12 @@ angular.module('ColorApp').component('mainSearch', {
 
         <div ng-if="$ctrl.photos.length >= 1" class="resultsContainer">
 
-          <photo-card ng-repeat="photo in $ctrl.photos" photo="2"></photo-card>
-
           <div class="cardContainer" ng-repeat="photo in $ctrl.photos"> 
-  <div class="favorite" ng-click="$ctrl.addFavorite(photo); favorite=true">
-    <i ng-hide="favorite" class="material-icons favoriteIcon whiteIcon" >favorite</i>
-    <i ng-show="favorite" class="material-icons favoriteIcon redIcon" >favorite</i>
-    <i class="material-icons favoriteIcon redIcon">favorite_border</i>
-  </div>
-  <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-  <i class="material-icons">cloud_download</i>
-  </a>
-  <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
-  <div class="imageTags cardSpec">{{ photo.tags }}</div>
-  <div class="imageDetails cardSpec">
-    <div>Downloads: {{ photo.downloads }}</div>
-    <div>Views: {{ photo.views }}</div>
-  </div>
-  <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
-</div>
-</div>
+            
+            <photo-card photo="photo.largeImageURL" tags="photo.tags" downloads="photo.downloads" views="photo.views" individual-photo-save="$ctrl.individualPhotoSave(photo)" add-favorite="$ctrl.addFavorite(favorite)"></photo-card>
+
+          </div>
+        </div>
 
         <div ng-if="$ctrl.photos.length < 1">
           <h3 style="color: red; font-weight: bold;">No results.</h3>
