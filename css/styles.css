@@ -337,6 +337,54 @@ template {
   display: none;
 }
 
+.photo-container {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.indiv-image {
+  width: 50%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  font-family: "Open Sans", sans-serif;
+}
+
+.similar-photos {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.color-palette {
+  width: 50%;
+}
+
+.comp-colors-title {
+  padding-left: 20px;
+}
+
+.color-grid2 {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.02s ease-in-out;
+  height: auto;
+  padding-left: 20px;
+}
+
+.sep {
+  color: darkslategray;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 html {
   font-size: 14px;
 }
@@ -393,11 +441,17 @@ body {
 
 a {
   text-decoration: none;
+  color: #353F3E;
+}
+
+a:visited {
+  text-decoration: none;
 }
 
 li:first-child {
   margin-right: auto;
   font-size: 32px;
+  font-family: "Sansita", sans-serif;
 }
 
 .navigation-menu {

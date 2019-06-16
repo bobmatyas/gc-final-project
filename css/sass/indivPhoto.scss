@@ -1,0 +1,51 @@
+.photo-container {
+width: 100%;
+display: flex;
+justify-content: left;
+flex-wrap: wrap;
+}
+
+.indiv-image{
+    width: 50%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.similar-photos{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+// take padding off mobile
+.color-palette{
+    // padding-left: 10px;
+    width: 50%;
+}
+
+.comp-colors-title {
+    padding-left: 20px;
+}
+
+.color-grid2 {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: center;
+    transition: all .02s ease-in-out;
+    height: auto;
+    // width: 100%;
+    padding-left: 20px;
+  }
+
+.sep {
+    color: darkslategray;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

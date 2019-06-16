@@ -1,4 +1,5 @@
 @import 'normalize';
+@import 'indivPhoto';
 
 
 $root-font-size: 14px;
@@ -70,11 +71,24 @@ body {
 
 a {
   text-decoration: none;
+  color: #353F3E;
+
 }
+
+a:visited { 
+  text-decoration: none; 
+}
+
 
 li:first-child {
   margin-right: auto;
   font-size: 32px;
+  font-family: 'Sansita', sans-serif;
+  // color: #353F3E !important;
+}
+
+.logo2 {
+  // color: #51CBBD;
 }
 
 .navigation-menu {

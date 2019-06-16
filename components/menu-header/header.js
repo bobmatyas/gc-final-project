@@ -18,7 +18,7 @@ angular.module('ColorApp').component('menuHeader', {
     <header class="navigation-container">
       <nav>
         <ul class="navigation-menu">
-          <li><a href="#" class="logo">picturePalette</a></li>
+          <li><a href="#" style="color: inherit" class="logo">Picture<span class="logo2">Palette</a></li></span>
           <li><a href="#!/favorites">My Favorites</a></li>
           <li>
             <label class="switch">
