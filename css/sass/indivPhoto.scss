@@ -3,10 +3,11 @@ width: 100%;
 display: flex;
 justify-content: left;
 flex-wrap: wrap;
+flex-direction: row;
 }
 
 .indiv-image{
-    width: 50%;
+    max-width: 800px;
 }
 
 body {
@@ -27,7 +28,7 @@ a {
 // take padding off mobile
 .color-palette{
     // padding-left: 10px;
-    width: 50%;
+    // width: 50%;
 }
 
 .comp-colors-title {
@@ -48,4 +49,13 @@ a {
     color: darkslategray;
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.photo-bar {
+    height: 40px;
+    background-color: lightgray;
+    margin-top: -15px;
+    position: relative;
+    z-index: 2000;
+    border-radius: 0px 0px 5px 5px; 
 }

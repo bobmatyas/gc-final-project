@@ -36,6 +36,9 @@ function PhotoController(PhotoService, $q) {
 
         <div class="indiv-image">
             <img class="imageSize" id="indivPhoto" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image)" />
+            <div class="photo-bar">
+              <!--Download and fav button--!>
+            </div>
         </div>
 
         <div class="color-palette">
@@ -90,6 +93,9 @@ function PhotoController(PhotoService, $q) {
                 <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
                 <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
           </div>
+
+          <!--Display categories?--!>
+
       </div>
       `, 
     controller: PhotoController,
