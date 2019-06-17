@@ -43,7 +43,8 @@ function PhotoController(PhotoService, $q) {
         </div>
 
         <div class="color-palette">
-          <h2 class="comp-colors-title">Complimentary Colors</h2>
+          <h2 class="comp-colors-title">Need design inspiration?</h2>
+          <h3>Check out complimentary colors you can use with this photo.</h3>
 
             <div class="color-grid2">
             <!--Need to add complimentary colors--!>
