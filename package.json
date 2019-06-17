@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/bobmatyas/gc-final-project/issues"
   },
-  "homepage": "https://github.com/bobmatyas/gc-final-project#readme"
+  "homepage": "https://github.com/bobmatyas/gc-final-project#readme",
+  "dependencies": {
+    "angular": "^1.7.8"
+  }
 }

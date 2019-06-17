@@ -1,0 +1,63 @@
+.photo-container {
+width: 100%;
+display: flex;
+justify-content: left;
+flex-wrap: wrap;
+flex-direction: row;
+}
+
+.indiv-image{
+    max-width: 800px;
+}
+
+.color-palette {
+    width: 50%;
+}
+
+// need to add logo font
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+// need to add photos from last search, max number of items
+.similar-photos{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.comp-colors-title {
+    padding-left: 20px;
+}
+
+// different than homepage
+.color-grid2 {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: center;
+    transition: all .02s ease-in-out;
+    height: auto;
+    // width: 100%;
+    padding-left: 20px;
+  }
+
+.sep {
+    color: darkslategray;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+// need to add buttons and style, different color?
+.photo-bar {
+    height: 40px;
+    background-color: lightgray;
+    margin-top: -15px;
+    position: relative;
+    z-index: 2000;
+    border-radius: 0px 0px 5px 5px; 
+}
