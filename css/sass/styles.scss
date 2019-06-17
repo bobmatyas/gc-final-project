@@ -1,6 +1,8 @@
 @import 'normalize';
 @import 'indivPhoto';
 
+@import 'search-results';
+@import 'search-bar';
 
 $root-font-size: 14px;
 $body-font-size: 1.6rem;
@@ -25,13 +27,14 @@ body {
   font-size: 110%;
 }
 
-#photos {
-}
 
 .main {
   width: 100vw;
 }
 
+// a {
+//   text-decoration: none;
+// }
 .resultsContainer {
   width: 100%;
   display: flex;
@@ -127,15 +130,6 @@ li:first-child {
 .animate-show-hide.ng-hide-add,
 .animate-show-hide.ng-hide-remove {
   transition: all linear 0.5s;
-}
-
-input[type=text] {
-  width: 100px;
-  -webkit-transition: width .35s ease-in-out;
-  transition: width .35s ease-in-out;
-}
-input[type=text]:focus {
-  width: 250px;
 }
 
 .color {
@@ -329,17 +323,6 @@ li {
   text-align: center;
 } 
 
-.favorite {
-  transform: translateX(230px) translateY(-150px);
-  position: absolute;
-    
-}
-
-.favoriteIcon {
-  position: absolute;
-  font-size: 40px;
-  cursor: pointer;
-}
 
 .contentContainer {
   width: 100%;

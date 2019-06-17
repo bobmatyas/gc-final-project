@@ -1,4 +1,4 @@
-function MainSearchController(PhotoService, $q, $scope) {
+function MainSearchController(PhotoService, $q, $scope, $location) {
 
   var ctrl = this;
 
@@ -80,8 +80,18 @@ function MainSearchController(PhotoService, $q, $scope) {
     console.log("you clicked it");
   }
 
+  /**
+   * This function takes the individual photo and saves it in the service to
+   * pass onto the individual photo page.
+   * 
+   * The $location.path uses the $location service to redirect to the photo
+   * route.
+   * 
+   */
+
   ctrl.individualPhotoSave = (photo) => {
     PhotoService.photo = photo;
+    $location.path('/photo');
   }
  
    // angular animations tips: https://forums.asp.net/t/2094767.aspx?AngularJS+How+to+move+a+div+from+bottom+to+up
@@ -91,9 +101,7 @@ function MainSearchController(PhotoService, $q, $scope) {
 
 angular.module('ColorApp').component('mainSearch', {
   template: `
-      <section id="photos">
-
-      <div class="home__search__bar search" ng-if="selectedColor" style="background-color: {{ selectedColor }}" > 
+      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColor }}; padding: 15px;" > 
         <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)" color="selectedColor"></search-bar>
       </div>
 
@@ -110,30 +118,17 @@ angular.module('ColorApp').component('mainSearch', {
 
         <div ng-if="$ctrl.photos.length >= 1" class="resultsContainer">
 
-          <div class="cardContainer" ng-repeat="photo in $ctrl.photos">
-            <div class="favorite" ng-click="$ctrl.addFavorite(photo); favorite=true">
-              <i ng-hide="favorite" class="material-icons favoriteIcon whiteIcon" >favorite</i>
-              <i ng-show="favorite" class="material-icons favoriteIcon redIcon" >favorite</i>
-              <i class="material-icons favoriteIcon redIcon">favorite_border</i>
-            </div>
-            <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-            <i class="material-icons">cloud_download</i>
-            </a>
-            <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
-            <div class="imageTags cardSpec">{{ photo.tags }}</div>
-            <div class="imageDetails cardSpec">
-              <div>Downloads: {{ photo.downloads }}</div>
-              <div>Views: {{ photo.views }}</div>
-            </div>
-            <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
+          <div class="card" ng-repeat="photo in $ctrl.photos"> 
+            
+            <photo-card photo="photo.largeImageURL" photo-web="photo.webformatURL" tags="photo.tags" downloads="photo.downloads" views="photo.views" individual-photo-save="$ctrl.individualPhotoSave(photo)" add-favorite="$ctrl.addFavorite(favorite)" color="selectedColor"></photo-card>
+
           </div>
         </div>
 
         <div ng-if="$ctrl.photos.length < 1">
           <h3 style="color: red; font-weight: bold;">No results.</h3>
         </div>
-        
-      </section>
+
     `, // or use templateUrl
   controller: MainSearchController
 });
