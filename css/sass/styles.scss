@@ -137,13 +137,13 @@ input[type=text]:focus {
 
 .color:hover {
   border-radius: 50%;
-  transition: .5s;
+  transition: .3s;
   .colorText {
     opacity: .5;
     transition: 1s;
     text-transform: uppercase;
   }
-  border: solid 10px lightgrey;
+  border: solid 5px lightgrey;
 }
 
 .colorText {

@@ -10,7 +10,7 @@ angular.module('ColorApp').component('home', {
   template: `
       <section id="home">
       <div class="home-text">
-         <h1>What color photos are you looking for?</h1>
+         <h1 class="fonts">What color photos are you looking for?</h1>
       </div>
   
       <main-search></main-search>

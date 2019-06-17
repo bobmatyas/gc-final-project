@@ -461,8 +461,8 @@ input[type=text]:focus {
 
 .color:hover {
   border-radius: 50%;
-  transition: 0.5s;
-  border: solid 10px lightgrey;
+  transition: 0.3s;
+  border: solid 5px lightgrey;
 }
 .color:hover .colorText {
   opacity: 0.5;
