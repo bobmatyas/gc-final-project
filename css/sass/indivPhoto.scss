@@ -10,6 +10,7 @@ flex-direction: row;
     max-width: 800px;
 }
 
+// need to add logo font
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -18,6 +19,7 @@ a {
     font-family: 'Open Sans', sans-serif;
 }
 
+// need to add photos from last search, max number of items
 .similar-photos{
     width: 100%;
     display: flex;
@@ -25,16 +27,11 @@ a {
     flex-wrap: wrap;
 }
 
-// take padding off mobile
-.color-palette{
-    // padding-left: 10px;
-    // width: 50%;
-}
-
 .comp-colors-title {
     padding-left: 20px;
 }
 
+// different than homepage
 .color-grid2 {
     display: flex;
     flex-wrap: wrap;
@@ -51,6 +48,7 @@ a {
     padding-bottom: 15px;
 }
 
+// need to add buttons and style, different color?
 .photo-bar {
     height: 40px;
     background-color: lightgray;

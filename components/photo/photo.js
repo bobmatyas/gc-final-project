@@ -6,6 +6,7 @@ function PhotoController(PhotoService, $q) {
 
     ctrl.image = PhotoService.photo;
 
+    //need to pull actual complimentary colors from API
     ctrl.compColors = ["red", "orange", "yellow", "green", "turquoise"];
 
 
@@ -37,7 +38,7 @@ function PhotoController(PhotoService, $q) {
         <div class="indiv-image">
             <img class="imageSize" id="indivPhoto" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image)" />
             <div class="photo-bar">
-              <!--Download and fav button--!>
+              <!--Need to add download and fav button--!>
             </div>
         </div>
 
@@ -45,6 +46,7 @@ function PhotoController(PhotoService, $q) {
           <h2 class="comp-colors-title">Complimentary Colors</h2>
 
             <div class="color-grid2">
+            <!--Need to add complimentary colors--!>
               <div ng-repeat="color in $ctrl.compColors" ng-click="selectColor(color)"> 
                 <div class="color" id="{{ color }}"></div>
                 <div class="comp-colors" ng-repeat="color in $ctrl.colorScheme">
@@ -60,7 +62,7 @@ function PhotoController(PhotoService, $q) {
       </div>
 
       <h3>Similar Photos</h3>
-      <!--Display thumbnails of other photos in random order--!>
+      <!--Need to display thumbnails of other photos in random order from last search (replace placeholder cards below)--!>
       <div class="similar-photos">
           <div class="cardContainer">
                 <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
@@ -94,7 +96,7 @@ function PhotoController(PhotoService, $q) {
                 <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
           </div>
 
-          <!--Display categories?--!>
+          <!--idea: Display categories?--!>
 
       </div>
       `, 
