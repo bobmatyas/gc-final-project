@@ -25,11 +25,6 @@ function PhotoController(PhotoService, $q) {
         });
     }  
   };  
-
-
-  // <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)"> 
-  //         <div class="color" id="{{ color }}"></div>
-  // </a>
   
   angular.module('ColorApp').component('photo', {
     template: `
@@ -47,7 +42,7 @@ function PhotoController(PhotoService, $q) {
           <h3>Check out complimentary colors you can use with this photo.</h3>
 
             <div class="color-grid2">
-            <!--Need to add complimentary colors--!>
+            <!--Need to add complimentary colors and style labels--!>
               <div ng-repeat="color in $ctrl.compColors" ng-click="selectColor(color)"> 
                 <div class="color" id="{{ color }}"></div>
                 <div class="comp-colors" ng-repeat="color in $ctrl.colorScheme">
