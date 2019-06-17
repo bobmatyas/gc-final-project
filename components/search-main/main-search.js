@@ -93,7 +93,7 @@ angular.module('ColorApp').component('mainSearch', {
   template: `
       <section id="photos">
 
-      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColor }}; padding: 15px;" > 
+      <div class="home__search__bar search" ng-if="selectedColor" style="background-color: {{ selectedColor }}" > 
         <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)" color="selectedColor"></search-bar>
       </div>
 
