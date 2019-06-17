@@ -349,6 +349,10 @@ template {
   max-width: 800px;
 }
 
+.color-palette {
+  width: 50%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -389,6 +393,8 @@ a {
   position: relative;
   z-index: 2000;
   border-radius: 0px 0px 5px 5px;
+}
+
 * {
   box-sizing: border-box;
 }
