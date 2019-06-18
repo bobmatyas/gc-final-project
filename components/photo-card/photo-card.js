@@ -15,7 +15,8 @@ angular.module('ColorApp').component('photoCard', {
     <div class="card__info__box">
     
       <div class="card__info__box__favorite">
-        <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite({favorite: $ctrl.photo})"></i>
+      photoweb {{$ctrl.photoWeb}}
+        <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite({id: $ctrl.id, largeFormatURL: $ctrl.photo, webFormatURL: $ctrl.photoWeb, tags: $ctrl.tags, views: $ctrl.views, downloads: $ctrl.downloads})"></i>
       </div>
 
       <div class="card__info__box__popularity">
@@ -50,5 +51,6 @@ angular.module('ColorApp').component('photoCard', {
     individualPhotoSave: '&',
     addFavorite: '&',
     color: '<',
+    id: '<',
   }
 });

@@ -47,8 +47,9 @@ function SearchBarController() {
 
 angular.module('ColorApp').component('searchBar', {
   template: `
+  <div class="containerContainer">
         <h2>Search</h2>
-        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="search by keyword" ng-keypress="($event.charCode==13)? $ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.color,}) : return" />
+        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="search by keyword" ng-keypress="($event.charCode==13)? $ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.color}) : return" />
         
         <div class="home__search__bar__input__holder">
           <div  class="home__search__bar__input__holder__box">
@@ -75,7 +76,7 @@ angular.module('ColorApp').component('searchBar', {
         </button>
           </div>
         </div>
-          
+    </div> 
 
     `, // or use templateUrl
   controller: SearchBarController,
