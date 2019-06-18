@@ -614,7 +614,7 @@ li:first-child {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  transition: all 0.02s ease-in-out;
+  transition: all 1s ease-in-out;
   height: auto;
   width: 100%;
 }
@@ -635,18 +635,18 @@ li:first-child {
   align-items: center;
   width: 190px;
   height: 190px;
-  transition: 0.5s;
+  border: solid 0px lightgray;
+  transition: border-width 0.3s linear, 1s;
   color: white;
 }
 
 .color:hover {
-  border-radius: 50%;
-  transition: 0.3s;
-  border: solid 5px lightgrey;
+  border-width: 5px;
+  transition: 0.1s;
 }
 .color:hover .colorText {
   opacity: 0.5;
-  transition: 1s;
+  transition: 1.5s;
   text-transform: uppercase;
 }
 
@@ -655,39 +655,40 @@ li:first-child {
   font-weight: 900;
   opacity: 0;
   transition: 0.3s;
+  text-transform: uppercase;
 }
 
 #red {
-  background-color: red;
+  background-color: #F44336;
 }
 
 #orange {
-  background-color: orange;
+  background-color: #FF9800;
 }
 
 #yellow {
-  background-color: yellow;
+  background-color: #FFEB3B;
   color: darkgray;
 }
 
 #green {
-  background-color: green;
+  background-color: #8BC34A;
 }
 
-#turquoise {
-  background-color: turquoise;
+#teal {
+  background-color: #009688;
 }
 
 #blue {
-  background-color: blue;
+  background-color: #03A9F4;
 }
 
-#lilac {
-  background-color: #c8a2c8;
+#purple {
+  background-color: #9C27B0;
 }
 
 #pink {
-  background-color: pink;
+  background-color: #E91E63;
 }
 
 #white {
@@ -696,20 +697,20 @@ li:first-child {
 }
 
 #black {
-  background-color: black;
+  background-color: #0f0f0f;
 }
 
 #gray {
-  background-color: gray;
+  background-color: #9E9E9E;
 }
 
 #brown {
-  background-color: brown;
+  background-color: #795548;
 }
 
 #grayscale {
-  background-color: #000;
-  background-image: linear-gradient(315deg, #000 0%, #d3d3d3 74%);
+  background-image: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+  color: darkgray;
 }
 
 .search {
@@ -730,8 +731,41 @@ li:first-child {
   width: 100vw;
 }
 
+.home__search__bar {
+  width: 100%;
+}
+
+.backColorContainer {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  transform: translateX(-90px) translateY(-190px);
+  justify-content: center;
+  align-items: center;
+  padding: none;
+  margin: none;
+  text-align: center;
+}
+
+.backColor {
+  color: white;
+  opacity: 0.2;
+  font-size: 150px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ng-binding {
+  z-index: 1;
+}
+
 .searchInput {
   margin: 7px;
+}
+
+.containerContainer {
+  z-index: 999;
 }
 
 .inputText {
