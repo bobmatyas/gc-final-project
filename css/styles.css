@@ -355,6 +355,8 @@ template {
 
 .indiv-image {
   max-width: 50%;
+  border: 1px solid #666666;
+  border-radius: 0px 0px 5px 5px;
 }
 
 body {
@@ -393,7 +395,6 @@ body {
 
 .photo-bar {
   height: 40px;
-  border: 1px solid #666666;
   background-color: #fff;
   margin-top: -15px;
   position: relative;
