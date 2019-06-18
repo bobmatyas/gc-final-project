@@ -7,8 +7,12 @@ function PhotoController(PhotoService, $q) {
     ctrl.image = PhotoService.photo;
 
     //need to pull actual complimentary colors from API
-    ctrl.compColors = ["red", "orange", "yellow", "green", "turquoise"];
+    // ctrl.compColors = ["red", "orange", "yellow", "green", "turquoise"];
 
+    ctrl.addFavorite = (favoriteParam) => {
+      PhotoService.setFavorites(favoriteParam);
+      console.log("you clicked it");
+    }
 
     ctrl.imageColor = (image) => {
       PhotoService.extractColor(image)
@@ -28,73 +32,39 @@ function PhotoController(PhotoService, $q) {
   
   angular.module('ColorApp').component('photo', {
     template: `
-      <div class="photo-container">
-
-        <div class="indiv-image">
-            <img class="imageSize" id="indivPhoto" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image)" />
-            <div class="photo-bar">
-              <!--Need to add download and fav button--!>
+  <div class="total-container">
+    <div class="photo-container">
+      <div class="indiv-image">
+        <img class="imageSize" id="indivPhoto" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image)" />
+          <div class="photo-bar">
+            <div class="card__info__box__favorite">
+              <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite({favorite: $ctrl.photo})"></i>
             </div>
-        </div>
+          </div>
+      </div>
 
-        <div class="color-palette">
+      <div class="color-palette">
+        <div>
           <h2 class="comp-colors-title">Need design inspiration?</h2>
-          <h3>Check out complimentary colors you can use with this photo.</h3>
-
-            <div class="color-grid2">
-            <!--Need to add complimentary colors and style labels--!>
-              <div ng-repeat="color in $ctrl.compColors" ng-click="selectColor(color)"> 
-                <div class="color" id="{{ color }}"></div>
-                <div class="comp-colors" ng-repeat="color in $ctrl.colorScheme">
-                  <p>Color: {{ color.label }} / {{ color.color }}</p>
-                </div>              
+          <h3>Click the image for complimentary colors you can use with this photo.</h3><br>
+        </div>
+         
+        <div class="color-grid2">
+          <div class="comp-colors2"> 
+            <div class="comp-colors" ng-repeat="color in $ctrl.colorScheme">
+              <div class="color2" style="background-color: {{ color.color}}; " ></div>
+                <p>{{ color.label }} <br> {{ color.color }} </p>
               </div>
-            </div>
+            </div>              
+          </div>
         </div>      
       </div>
 
       <div class="sep">
         <hr>
       </div>
-
-      <h3>Similar Photos</h3>
-      <!--Need to display thumbnails of other photos in random order from last search (replace placeholder cards below)--!>
-      <div class="similar-photos">
-          <div class="cardContainer">
-                <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-                  <i class="material-icons">cloud_download</i>
-                </a>
-                <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
-                <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
-          </div>  
-
-          <div class="cardContainer">
-                <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-                  <i class="material-icons">cloud_download</i>
-                </a>
-                <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
-                <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
-          </div>
-
-          <div class="cardContainer">
-                <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-                  <i class="material-icons">cloud_download</i>
-                </a>
-                <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
-                <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
-          </div>
-
-          <div class="cardContainer">
-                <a href="{{ photo.largeImageURL }}" download="{{ photo.largeImageURL }}">
-                  <i class="material-icons">cloud_download</i>
-                </a>
-                <img class="imageSize" ng-src="{{ photo.largeImageURL }}" />
-                <p ng-click="$ctrl.individualPhotoSave(photo.largeImageURL)"><a href="#!/photo">Choose Photo</a></p>
-          </div>
-
-          <!--idea: Display categories?--!>
-
-      </div>
+    </div>
+  </div>
       `, 
     controller: PhotoController,
   });
