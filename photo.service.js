@@ -62,10 +62,17 @@ function PhotoService($http) {
   }
   
   service.photo = '';
+
   service.selectedPhoto = (image) => {
     console.log('testing photo service');
     service.photo = image;
   }
+
+  service.individualPhotoSave = (photo) => {
+    PhotoService.photo = photo;
+    $location.path('/photo');
+  }
+
 
 }
 
