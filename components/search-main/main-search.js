@@ -75,8 +75,8 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
  
 
 
-  ctrl.addFavorite = (favoriteParam) => {
-    PhotoService.setFavorites(favoriteParam);
+  ctrl.addFavorite = (id, largeFormatURL, webFormatURL, tags, downloads, views) => {
+    PhotoService.setFavorites(id, largeFormatURL, webFormatURL, tags, downloads, views);
     console.log("you clicked it");
   }
 
@@ -120,7 +120,7 @@ angular.module('ColorApp').component('mainSearch', {
 
           <div class="card" ng-repeat="photo in $ctrl.photos"> 
             
-            <photo-card photo="photo.largeImageURL" photo-web="photo.webformatURL" tags="photo.tags" downloads="photo.downloads" views="photo.views" individual-photo-save="$ctrl.individualPhotoSave(photo)" add-favorite="$ctrl.addFavorite(favorite)" color="selectedColor"></photo-card>
+            <photo-card photo="photo.largeImageURL" photo-web="photo.webformatURL" tags="photo.tags" downloads="photo.downloads" id="photo.id" views="photo.views" individual-photo-save="$ctrl.individualPhotoSave(photo)" add-favorite="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)" color="selectedColor"></photo-card>
 
           </div>
         </div>

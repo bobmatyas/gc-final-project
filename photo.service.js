@@ -44,8 +44,17 @@ function PhotoService($http) {
     });
   }
 
-  service.setFavorites = (favoriteParam) =>{
-    service.favoriteArray.push(favoriteParam);
+  service.setFavorites = (id, largeFormatURL, webFormatURL, tags, downloads, views) =>{
+    let newFavorite = {
+      id: id,
+      photo: largeFormatURL,
+      photoWeb: webFormatURL,
+      tags: tags, 
+      downloads: downloads,
+      views: views
+    }
+    console.log(newFavorite);
+    service.favoriteArray.push(newFavorite);
     console.log(service.favoriteArray)
   }
   service.setRemoveFavorites = (removeParam) =>{
