@@ -1,49 +1,52 @@
-.photo-container {
-width: 100%;
-display: flex;
-justify-content: left;
-flex-wrap: wrap;
-flex-direction: row;
-}
-
-.indiv-image{
-    max-width: 800px;
-}
-
-.color-palette {
-    width: 50%;
-}
-
-// need to add logo font
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
-a {
-    font-family: 'Open Sans', sans-serif;
-}
-
-// need to add photos from last search, max number of items
-.similar-photos{
+.total-container {
     width: 100%;
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
-.comp-colors-title {
-    padding-left: 20px;
-}
-
-// different than homepage
-.color-grid2 {
+.photo-container {
+    width: 100%;
     display: flex;
+    justify-content: left;
     flex-wrap: wrap;
-    // justify-content: center;
-    transition: all .02s ease-in-out;
-    height: auto;
-    // width: 100%;
+    flex-direction: row;
+}
+
+.indiv-image{
+    max-width: 50%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.color-palette {
     padding-left: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: column;
+    // width: 50%;
+}
+
+.comp-colors2 {
+    // width: 100%;
+    display: flex;
+    // justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.color2 {
+    /* background-color: #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
   }
 
 .sep {
@@ -55,9 +58,20 @@ a {
 // need to add buttons and style, different color?
 .photo-bar {
     height: 40px;
-    background-color: lightgray;
+    border: 1px solid #666666;
+    background-color: #fff;
     margin-top: -15px;
     position: relative;
     z-index: 2000;
-    border-radius: 0px 0px 5px 5px; 
+    border-radius: 0px 0px 5px 5px;
+    padding-top: 5px; 
+    padding-right: 8px;
 }
+
+// need to add photos from last search, max number of items
+// .similar-photos{
+//     width: 100%;
+//     display: flex;
+//     justify-content: left;
+//     flex-wrap: wrap;
+// }

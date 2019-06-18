@@ -18,7 +18,7 @@ function FavoritesPageController(PhotoService) {
   .component('favoritesPage', {
     template: `
     <div class="contentContainer">
-    <h2>FAVORITES<h2>
+    <h2>Favorites<h2>
     <div class="resultsContainer">
         <div class="cardContainer" ng-click="$ctrl.imageColor(photo.largeImageURL)" ng-repeat="photo in $ctrl.favoriteArray">
             <div class="favorite" ng-click="$ctrl.setRemoveFavorites(photo)">

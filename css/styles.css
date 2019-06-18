@@ -337,6 +337,14 @@ template {
   display: none;
 }
 
+.total-container {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 .photo-container {
   width: 100%;
   display: flex;
@@ -346,38 +354,35 @@ template {
 }
 
 .indiv-image {
-  max-width: 800px;
-}
-
-.color-palette {
-  width: 50%;
+  max-width: 50%;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
 }
 
-a {
-  font-family: "Open Sans", sans-serif;
-}
-
-.similar-photos {
-  width: 100%;
+.color-palette {
+  padding-left: 20px;
+  width: 50%;
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.comp-colors-title {
-  padding-left: 20px;
-}
-
-.color-grid2 {
+.comp-colors2 {
   display: flex;
   flex-wrap: wrap;
-  transition: all 0.02s ease-in-out;
-  height: auto;
-  padding-left: 20px;
+  flex-direction: row;
+}
+
+.color2 {
+  /* background-color: #000; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
 }
 
 .sep {
@@ -388,11 +393,14 @@ a {
 
 .photo-bar {
   height: 40px;
-  background-color: lightgray;
+  border: 1px solid #666666;
+  background-color: #fff;
   margin-top: -15px;
   position: relative;
   z-index: 2000;
   border-radius: 0px 0px 5px 5px;
+  padding-top: 5px;
+  padding-right: 8px;
 }
 
 .resultsContainer {
