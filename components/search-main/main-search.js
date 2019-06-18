@@ -26,7 +26,7 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
 
    // these come direct from the Pixabay API
 
-   ctrl.colors = ["grayscale", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black", "brown"];
+   ctrl.colors = ["grayscale", "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "white", "gray", "black"];
 
 
    /**
@@ -107,7 +107,10 @@ angular.module('ColorApp').component('mainSearch', {
 
       <div class="color-grid  animate-show-hide" ng-hide="$ctrl.hideGrid">
         <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)"> 
-          <div class="color" id="{{ color }}"></div>
+          <div class="color" id="{{ color }}">
+            <div class="colorText">{{ color }}
+            </div>
+          </div>
         </a>
       </div>
 
