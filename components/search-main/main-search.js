@@ -159,7 +159,7 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
 
 angular.module('ColorApp').component('mainSearch', {
   template: `
-      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColorHex }}; padding: 15px;" > 
+      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColorHex }};" > 
         <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)" color="selectedColor"></search-bar>
       </div>
 
