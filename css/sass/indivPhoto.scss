@@ -14,22 +14,17 @@
     flex-direction: row;
 }
 
-.indiv-image{
-    max-width: 50%;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
 .color-palette {
     padding-left: 20px;
-    width: 50%;
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
     flex-direction: column;
     // width: 50%;
+}
+
+.comp-colors-title {
+  font-size: 2.4rem;
 }
 
 .comp-colors2 {
@@ -66,6 +61,17 @@ body {
     border-radius: 0px 0px 5px 5px;
     padding-top: 5px; 
     padding-right: 8px;
+}
+
+.imageSize {
+  width: 100%;
+}
+
+.imageDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 // need to add photos from last search, max number of items

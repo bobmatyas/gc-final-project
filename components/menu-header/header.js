@@ -23,13 +23,30 @@ angular.module('ColorApp').component('menuHeader', {
 
         <nav>
           <ul class="navigation-menu">
-            <li><a href="#!/favorites">My Favorites</a></li>
+            <li>
+              <a href="#!/favorites">             
+                <i class="material-icons">
+                    favorite_border
+                </i>
+                <br>favorites   
+              </a>
+            </li>
+            <!--
+            
             <li>
               <label class="switch">
                 <input type="checkbox" ng-click="$ctrl.toggleDark()">
                 <span class="slider round"></span>
               </label>
+            </li> 
+            -->
+            <li>
+              <i class="material-icons"  ng-click="$ctrl.toggleDark()">
+                brightness_medium
+              </i>
+              <br>dark mode    
             </li>
+
           </ul>
         </div>
       </nav>

@@ -1,11 +1,23 @@
+/* this imports normalize.scss to make spacing, padding, native element display consistent across
+browsers */
+
 @import 'normalize';
 
+/* these imports are for individual components/sections of the app */
+
 @import 'indivPhoto';
-
 @import 'header';
-
 @import 'search-results';
 @import 'search-bar';
+
+/* media query css is at the bottom of the file */
+
+$desktop: 600px;
+
+/* dark mode css is at the bottom of the file */
+
+
+/* default font sizes and colors */
 
 $root-font-size: 10px;
 $body-font-size: 1.6rem;
@@ -15,6 +27,9 @@ $color-1: #fff;
 $color-2: #fff;
 $color-3: #fff;
 $color-4: #fff;
+
+/* base styling */
+
 
 * {
   box-sizing: border-box;
@@ -33,22 +48,7 @@ body {
   width: 100vw;
 }
 
-// a {
-//   text-decoration: none;
-// }
 
-.imageSize {
-  width: 100%;
-  border-radius: 5px;
-}
-
-
-.imageDetails {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
 .cardSpec {
   padding: 10px 0;
@@ -56,14 +56,6 @@ body {
   color: darkgray;
 }
 
-a {
-  text-decoration: none;
-  color: #353F3E;
-}
-
-a:visited { 
-  text-decoration: none; 
-}
 
 
 
@@ -80,7 +72,6 @@ a:visited {
 }
 
 .color-grid {
-  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -103,17 +94,20 @@ a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 190px;
-  height: 190px;
+  width: 100%;
+  height: 75px;
   border: solid 0px lightgray;
   transition: border-width 0.3s linear, 1s;
   color: white;
+  flex-direction: column;
 }
 
 .color:hover {
   // border-radius: 50%;
   border-width: 5px;
   transition: .1s;
+  cursor: pointer;
+
   .colorText {
     opacity: .5;
     transition: 1.5s;
@@ -260,6 +254,12 @@ body {
 }
 
 .dark {
-  background-color: hsl(207, 26%, 17%);
+  background-color: #121212;
   color: hsl(0, 0%, 100%);
+}
+
+@media only screen and (min-width: $desktop)  {
+
+  @import 'desktop';
+
 }

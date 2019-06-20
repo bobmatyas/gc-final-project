@@ -3,6 +3,11 @@
   font-size: 2.6rem;
 }
 
+.logo a {
+  color: #353F3E;
+  text-decoration: none;
+}
+
 .logo2 {
   // color: #51CBBD;
 }
@@ -26,7 +31,25 @@
 
 .navigation-menu li {
   list-style: none;
-  padding: 20px;
+  padding: 0 5px;
+  color: #666666;
+  font-size: 0.9rem;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navigation-menu li:nth-child(2) {
+  border-left: 1px solid #eee;
+} 
+
+.navigation-menu li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation-menu li:hover {
+  color: red;
 }
 
 /* The switch - the box around the slider */
