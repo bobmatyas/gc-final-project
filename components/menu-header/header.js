@@ -16,17 +16,22 @@ function MenuHeaderController($rootScope) {
 angular.module('ColorApp').component('menuHeader', {
   template: `
     <header class="navigation-container">
-      <nav>
-        <ul class="navigation-menu">
-          <li><a href="#" style="color: inherit" class="logo">Picture<span class="logo2">Palette</a></li></span>
-          <li><a href="#!/favorites">My Favorites</a></li>
-          <li>
-            <label class="switch">
-              <input type="checkbox" ng-click="$ctrl.toggleDark()">
-              <span class="slider round"></span>
-             </label>
-          </li>
-        </ul>
+      
+        <div>
+          <h1 class="logo"><a href="#">Picture<span class="logo2">Palette</span></a></h1>
+        </div>
+
+        <nav>
+          <ul class="navigation-menu">
+            <li><a href="#!/favorites">My Favorites</a></li>
+            <li>
+              <label class="switch">
+                <input type="checkbox" ng-click="$ctrl.toggleDark()">
+                <span class="slider round"></span>
+              </label>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
     `, // or use templateUrl

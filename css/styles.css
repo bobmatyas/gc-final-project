@@ -534,39 +534,16 @@ input[type=text]:focus {
 }
 
 html {
-  font-size: 14px;
+  font-size: 10px;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   padding: 5%;
-  font-size: 110%;
+  font-family: "Open Sans", sans-serif;
 }
 
 .main {
   width: 100vw;
-}
-
-.resultsContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.cardContainer {
-  width: 300px;
-  background-color: #f9f6f6;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  -webkit-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
-  -moz-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
-  box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
 }
 
 .imageSize {
@@ -596,16 +573,22 @@ a:visited {
   text-decoration: none;
 }
 
-li:first-child {
-  margin-right: auto;
-  font-size: 32px;
+.logo {
   font-family: "Sansita", sans-serif;
+  font-size: 2.6rem;
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: center;
 }
 
 .navigation-menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .home-text {
