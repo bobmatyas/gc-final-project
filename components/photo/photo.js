@@ -40,13 +40,18 @@ function PhotoController(PhotoService, $q) {
       console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
       console.log("you clicked it");
     }
+
+    ctrl.downloadFile = (url) => {
+      window.location.assign(url);
+    }
+
   };  
   
-{/* <div class="photo-bar">
+/* <div class="photo-bar">
             <div class="card__info__box__favorite">
               <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)" color="selectedColor""></i>
             </div>
-          </div> */}
+          </div> */
 
 
   angular.module('ColorApp').component('photo', {
@@ -56,6 +61,9 @@ function PhotoController(PhotoService, $q) {
       <div class="indiv-image">
         <img class="imageSize" id="indivPhoto" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image)" />
           <div class="photo-bar">
+            <div class="">
+              <p><a href="data:text/plain;base64,${btoa(theStringGoesHere)}">Download</a></p>
+            </div>
             <div class="card__info__box__favorite">
               <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)"></i>
             </div>
