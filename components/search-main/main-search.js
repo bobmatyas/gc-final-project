@@ -162,7 +162,7 @@ angular.module('ColorApp').component('mainSearch', {
       <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColorHex }};" > 
         <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)" color="selectedColor"></search-bar>
       </div>
-
+      <div class="bodyBackground">
       <div class="color-grid  animate-show-hide" ng-hide="$ctrl.hideGrid">
         <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)" class="color {{ color.color }}"> 
           <div class="colorText">
@@ -170,7 +170,8 @@ angular.module('ColorApp').component('mainSearch', {
           </div>
         </a>
       </div>
-
+      </div>
+      
       <div class="search-results">
 
         <h2 ng-if="$ctrl.photos.length >= 1" class="search-results__heading">Results</h2>

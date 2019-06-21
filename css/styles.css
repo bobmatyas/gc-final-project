@@ -1053,13 +1053,22 @@ body {
   font-weight: 900;
 }
 
+.bodyBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-75px);
+}
+
 .color-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   transition: all 1s ease-in-out;
   height: auto;
   width: 100%;
+  max-width: 1200px;
 }
 
 .animate-show-hide.ng-hide {
