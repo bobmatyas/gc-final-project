@@ -1053,6 +1053,7 @@ body {
   padding-top: 50px;
   font-family: "Open Sans", sans-serif;
   color: #353F3E;
+  line-height: 1.6rem;
 }
 
 .title-pic {
@@ -1069,11 +1070,16 @@ body {
   text-align: center;
   font-size: 2.6rem;
   font-style: italic;
-  font-weight: 800;
 }
 
-.pal {
-  font-weight: 400px;
+#pal {
+  font-weight: 800px;
+  color: #009688;
+}
+
+#pic {
+  font-weight: 800px;
+  color: #9E9E9E;
 }
 
 .fonts {
