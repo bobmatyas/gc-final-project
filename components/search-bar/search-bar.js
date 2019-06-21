@@ -42,12 +42,17 @@ function SearchBarController() {
     'vertical'
   ];
 
-
+  // console.log(colors);
 }
+
+{/* <div class="colorSelect" ng-repeat="color in $ctrl.colors">
+          <div class="{{color.color}} smallSelect"></div>
+        </div> */}
 
 angular.module('ColorApp').component('searchBar', {
   template: `
   <div class="containerContainer">
+        
         <h2>Search</h2>
         <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="search by keyword" ng-keypress="($event.charCode==13)? $ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.color}) : return" />
         
@@ -83,5 +88,6 @@ angular.module('ColorApp').component('searchBar', {
   bindings: {
     getPhotos: "&",
     color: "<",
+    // colors: "<"
   }
 });
