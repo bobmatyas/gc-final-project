@@ -49,6 +49,7 @@ angular.module('ColorApp').component('photoCard', {
     views: '<',
     individualPhotoSave: '&',
     addFavorite: '&',
+    setRemoveFavorites: '&',
     color: '<',
     id: '<',
   }
