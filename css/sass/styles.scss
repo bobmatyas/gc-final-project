@@ -63,7 +63,21 @@ body {
 
 
 
+.dark .specText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9e9e9e;
+}
 
+.specText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #686868;
+}
+
+.boldText {
+  font-weight: bolder;
+}
 
 
 .home-text {
@@ -306,6 +320,7 @@ body {
 
 .dark .card {
   border: 1px solid #303030;
+  background: linear-gradient(45deg, rgba(0,0,0,0.71) 0%,rgba(0,0,0,0.71) 10%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%);
 }
 
 .dark .card__image__container {
