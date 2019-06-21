@@ -749,57 +749,57 @@ body {
   text-transform: uppercase;
 }
 
-#red {
+.red {
   background-color: #F44336;
 }
 
-#orange {
+.orange {
   background-color: #FF9800;
 }
 
-#yellow {
+.yellow {
   background-color: #FFEB3B;
   color: darkgray;
 }
 
-#green {
+.green {
   background-color: #8BC34A;
 }
 
-#teal {
+.teal {
   background-color: #009688;
 }
 
-#blue {
+.blue {
   background-color: #03A9F4;
 }
 
-#purple {
+.purple {
   background-color: #9C27B0;
 }
 
-#pink {
+.pink {
   background-color: #E91E63;
 }
 
-#white {
+.white {
   background-color: white;
   color: darkgray;
 }
 
-#black {
+.black {
   background-color: #0f0f0f;
 }
 
-#gray {
+.gray {
   background-color: #9E9E9E;
 }
 
-#brown {
+.brown {
   background-color: #795548;
 }
 
-#grayscale {
+.grayscale {
   background-image: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
   color: darkgray;
 }

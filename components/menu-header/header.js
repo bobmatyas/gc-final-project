@@ -40,8 +40,8 @@ angular.module('ColorApp').component('menuHeader', {
               </label>
             </li> 
             -->
-            <li>
-              <i class="material-icons"  ng-click="$ctrl.toggleDark()">
+            <li ng-click="$ctrl.toggleDark()">
+              <i class="material-icons">
                 brightness_medium
               </i>
               <br>dark mode    

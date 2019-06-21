@@ -33,7 +33,7 @@ angular.module('ColorApp').component('photoCard', {
       </div>
 
       <div class="card__button__holder">
-        <button class="button--card button" style="background-color: {{ $ctrl.color }};" ng-click="$ctrl.individualPhotoSave({photo: $ctrl.photo})">Get Palette</button>
+        <button class="button--card button {{ $ctrl.color }}" ng-click="$ctrl.individualPhotoSave({photo: $ctrl.photo})">Get Palette</button>
       </div>
 
     </div>

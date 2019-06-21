@@ -164,7 +164,7 @@ angular.module('ColorApp').component('mainSearch', {
       </div>
 
       <div class="color-grid  animate-show-hide" ng-hide="$ctrl.hideGrid">
-        <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)" class="color" id="{{ color.color }}"> 
+        <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)" class="color {{ color.color }}"> 
           <div class="colorText">
             {{ color.color }}
           </div>
