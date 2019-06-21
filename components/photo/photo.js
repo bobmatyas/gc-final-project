@@ -27,7 +27,13 @@ function PhotoController(PhotoService, $q) {
           console.error(error);
           throw error;
         });
-    }  
+    }
+    
+    ctrl.addFavorite = (id, largeFormatURL, webFormatURL, tags, downloads, views) => {
+      PhotoService.setFavorites(id, largeFormatURL, webFormatURL, tags, downloads, views);
+      console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
+      console.log("you clicked it");
+    }
   };  
   
   angular.module('ColorApp').component('photo', {
@@ -38,7 +44,7 @@ function PhotoController(PhotoService, $q) {
         <img class="imageSize" id="indivPhoto" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image)" />
           <div class="photo-bar">
             <div class="card__info__box__favorite">
-              <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite({favorite: $ctrl.photo})"></i>
+              <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)"></i>
             </div>
           </div>
       </div>
@@ -67,4 +73,15 @@ function PhotoController(PhotoService, $q) {
   </div>
       `, 
     controller: PhotoController,
+    bindings: {
+    photo: '<',
+    photoWeb: '<',
+    tags: '<',
+    downloads: '<',
+    views: '<',
+    individualPhotoSave: '&',
+    addFavorite: '&',
+    color: '<',
+    id: '<'
+    }
   });

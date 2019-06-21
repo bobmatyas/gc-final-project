@@ -11,9 +11,9 @@
 
 
 </head>
-<body class="{{$root.bodyClass}}">
-
+<body class="{{$root.bodyClass}} bodyBackground">
   <menu-header></menu-header>
+  <background></background>
   
   
   <main id="main" data-ng-view>
@@ -43,5 +43,9 @@
   <script src="components/search-main/main-search.js"></script> 
   <script src="components/search-bar/search-bar.js"></script>
   <script src="components/photo-card/photo-card.js"></script>
+  <script src="components/background/background.js"></script>
+
+  <!-- Add jQuery Functionality -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </body>
 </html>
