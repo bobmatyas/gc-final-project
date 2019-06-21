@@ -57,8 +57,8 @@ function PhotoService($http) {
     service.favoriteArray.push(newFavorite);
     console.log(service.favoriteArray)
   }
-  service.setRemoveFavorites = (removeParam) =>{
-    service.favoriteArray.splice(service.favoriteArray.indexOf(removeParam), 1);
+  service.setRemoveFavorites = (favorite) =>{
+    service.favoriteArray.splice(service.favoriteArray.indexOf(favorite), 1);
   }
   
   service.photo = '';
