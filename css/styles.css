@@ -755,6 +755,7 @@ input[type=text]:focus {
   height: 100%;
   overflow: hidden;
   opacity: 0.5;
+  position: relative;
 }
 
 .rowContainer {
@@ -1044,8 +1045,35 @@ body {
   color: darkgray;
 }
 
-.home-text {
+.bg-title {
+  justify-content: center;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  padding-top: 50px;
+  font-family: "Open Sans", sans-serif;
+  color: #353F3E;
+}
+
+.title-pic {
   text-align: center;
+  font-size: 2.6rem;
+}
+
+.title-pal {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.title-all {
+  text-align: center;
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.pal {
+  font-weight: 400px;
 }
 
 .fonts {

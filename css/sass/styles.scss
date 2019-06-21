@@ -60,14 +60,39 @@ body {
   color: darkgray;
 }
 
+.bg-title {
+  justify-content: center;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  padding-top: 50px;
+  font-family: 'Open Sans', sans-serif;
+  color: #353F3E;
+}
 
-
-
-
-
-
-.home-text {
+.title-pic{
   text-align: center;
+  font-size: 2.6rem;
+}
+
+.title-pal{
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.title-all{
+  text-align: center;
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.pal {
+  font-weight: 400px; 
+}
+
+.pic {
+
 }
 
 .fonts {
