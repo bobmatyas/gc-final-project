@@ -54,7 +54,7 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
       hex:"#8BC34A"
     },
     {
-      color:"teal",
+      color:"turquoise",
       hex:"#009688"
     },
     {
@@ -182,7 +182,7 @@ angular.module('ColorApp').component('mainSearch', {
             <photo-card 
             photo="photo.largeImageURL" 
             photo-web="photo.webformatURL" tags="photo.tags" downloads="photo.downloads" id="photo.id" views="photo.views" individual-photo-save="$ctrl.individualPhotoSave(photo)"
-             add-favorite="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)" color="selectedColor"></photo-card>
+            add-favorite="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)" color="selectedColor"></photo-card>
 
           </div>
         </div>

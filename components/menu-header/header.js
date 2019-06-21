@@ -1,7 +1,8 @@
-function MenuHeaderController($rootScope) {
+function MenuHeaderController($rootScope, $scope) {
   var ctrl = this;
 
   $rootScope.bodyClass = '';
+
 
   ctrl.toggleDark = () => {
     if (!$rootScope.bodyClass) {
@@ -52,5 +53,8 @@ angular.module('ColorApp').component('menuHeader', {
       </nav>
     </header>
     `, // or use templateUrl
-  controller: MenuHeaderController
+  controller: MenuHeaderController,
+  bindings: {
+    color: '<'
+  }
 });

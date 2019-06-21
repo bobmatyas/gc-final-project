@@ -9,6 +9,9 @@ browsers */
 @import 'header';
 @import 'search-results';
 @import 'search-bar';
+@import 'background';
+
+@import 'header';
 
 /* media query css is at the bottom of the file */
 
@@ -34,6 +37,7 @@ $color-4: #fff;
 * {
   box-sizing: border-box;
 }
+
 
 html {
   font-size: $root-font-size;
@@ -143,7 +147,7 @@ body {
   background-color: #8BC34A;
 }
 
-.teal {
+.turquoise {
   background-color: #009688;
 }
 
@@ -179,6 +183,18 @@ body {
 .grayscale {
   background-image: linear-gradient(135deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
   color: darkgray;
+}
+
+.colorSelect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.smallSelect {
+  flex: 1;
+  height: 50px;
 }
 
 .search {

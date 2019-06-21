@@ -113,5 +113,44 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+  color: #9E9E9E;
 }
 
+.logo2 {
+  -webkit-animation: color-change 10s infinite;
+  -moz-animation: color-change 10s infinite;
+  animation: color-change 10s infinite;
+}
+
+@-webkit-keyframes color-change {
+  0% { color: #F44336; }
+  10% { color: #ff9800; }
+  30% { color: #FFEB3B; }
+  45% { color: #8BC34A; }
+  60% { color: #009688; }
+  80% { color: #03A9F4; }
+  90% { color: #9C27B0; }
+  100% { color: #E91E63; }
+}
+
+@-moz-keyframes color-change {
+  0% { color: #F44336; }
+  10% { color: #ff9800; }
+  30% { color: #FFEB3B; }
+  45% { color: #8BC34A; }
+  60% { color: #009688; }
+  80% { color: #03A9F4; }
+  90% { color: #9C27B0; }
+  100% { color: #E91E63; }
+}
+
+@keyframes color-change {
+  0% { color: #F44336; }
+  10% { color: #ff9800; }
+  30% { color: #FFEB3B; }
+  45% { color: #8BC34A; }
+  60% { color: #009688; }
+  80% { color: #03A9F4; }
+  90% { color: #9C27B0; }
+  100% { color: #E91E63; }
+}

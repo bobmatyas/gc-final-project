@@ -1,8 +1,8 @@
-function PhotoCardController() {
+function PhotoCardController($scope) {
   
   var ctrl = this;
 
-
+  ctrl.colorHex = $scope.selectedColorHex;
 }
 
 angular.module('ColorApp').component('photoCard', {
@@ -49,6 +49,7 @@ angular.module('ColorApp').component('photoCard', {
     views: '<',
     individualPhotoSave: '&',
     addFavorite: '&',
+    setRemoveFavorites: '&',
     color: '<',
     id: '<',
   }
