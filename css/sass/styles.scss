@@ -253,13 +253,36 @@ body {
   color: #000;
 }
 
-.dark {
-  background-color: #121212;
-  color: hsl(0, 0%, 100%);
-}
 
 @media only screen and (min-width: $desktop)  {
 
   @import 'desktop';
 
+}
+
+
+.dark {
+  background-color: #303030;
+  color: hsl(0, 0%, 100%);
+}
+
+.dark .navigation-container {
+  background-color: #212121; 
+  border-bottom: 1px solid #424242;
+}
+
+.dark .card__image {
+  border-bottom: 2px solid #212121;
+}
+
+.dark .card__info__box {
+  background-color: #424242;
+}
+
+.dark .card {
+  border: 1px solid #303030;
+}
+
+.dark .card__image__container {
+  border-bottom: 1px solid #212121;
 }
