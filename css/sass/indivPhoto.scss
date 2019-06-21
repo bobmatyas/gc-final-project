@@ -16,8 +16,6 @@
 
 .indiv-image{
     max-width: 50%;
-    border: 1px solid #666666;
-    border-radius: 5px;
 }
 
 body {
@@ -60,13 +58,14 @@ body {
 // need to add buttons and style, different color?
 .photo-bar {
     height: 40px;
-    // border: 1px solid #666666;
+    border: 1px solid #666666;
     background-color: #fff;
     margin-top: -15px;
     position: relative;
     z-index: 2000;
     border-radius: 0px 0px 5px 5px;
-    padding: 5px; 
+    padding-top: 5px; 
+    padding-right: 8px;
 }
 
 // need to add photos from last search, max number of items
