@@ -159,20 +159,21 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
 
 angular.module('ColorApp').component('mainSearch', {
   template: `
-      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColorHex }}; padding: 15px;" > 
+      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColorHex }};" > 
         <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)" color="selectedColor"></search-bar>
       </div>
 
       <div class="color-grid  animate-show-hide" ng-hide="$ctrl.hideGrid">
-        <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)"> 
-          <div class="color {{ color.color }}">
-            <div class="colorText">{{ color.color }}
-            </div>
+        <a ng-repeat="color in $ctrl.colors" ng-click="selectColor(color)" class="color {{ color.color }}"> 
+          <div class="colorText">
+            {{ color.color }}
           </div>
         </a>
       </div>
 
-        <h2 ng-if="$ctrl.photos.length >= 1">Results</h2>
+      <div class="search-results">
+
+        <h2 ng-if="$ctrl.photos.length >= 1" class="search-results__heading">Results</h2>
 
         <div ng-if="$ctrl.photos.length >= 1" class="resultsContainer">
 
@@ -189,6 +190,8 @@ angular.module('ColorApp').component('mainSearch', {
         <div ng-if="$ctrl.photos.length < 1">
           <h3 style="color: red; font-weight: bold;">No results.</h3>
         </div>
+
+      </div>
 
     `, // or use templateUrl
   controller: MainSearchController
