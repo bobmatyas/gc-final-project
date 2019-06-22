@@ -1,6 +1,8 @@
-function PhotoCardController($scope) {
+function PhotoCardController($scope, PhotoService) {
   
   var ctrl = this;
+
+  this.service = PhotoService;
 
   ctrl.colorHex = $scope.selectedColorHex;
 }
@@ -14,8 +16,9 @@ angular.module('ColorApp').component('photoCard', {
 
     <div class="card__info__box">
     
-      <div class="card__info__box__favorite">
-        <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite({id: $ctrl.id, largeFormatURL: $ctrl.photo, webFormatURL: $ctrl.photoWeb, tags: $ctrl.tags, views: $ctrl.views, downloads: $ctrl.downloads})"></i>
+      <div class="card__info__box__favorites">
+        <i ng-if="$ctrl.service.isInFavorites($ctrl.id)===false" class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite({id: $ctrl.id, largeFormatURL: $ctrl.photo, webFormatURL: $ctrl.photoWeb, tags: $ctrl.tags, views: $ctrl.views, downloads: $ctrl.downloads})">favorite_outline</i>
+        <i ng-if="$ctrl.service.isInFavorites($ctrl.id)!==false" class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.service.setRemoveFavorites($ctrl.id)">favorite</i>
       </div>
 
       <div class="card__info__box__popularity">

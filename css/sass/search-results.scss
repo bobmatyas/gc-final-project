@@ -52,7 +52,7 @@
   padding: 5%;
 }
 
-.card__info__box__favorite {
+.card__info__box__favorites {
   text-align: right;
 }
 
@@ -61,13 +61,6 @@
   color: red;
 }
 
-.material-icons.card__info__box__favorite__button::before{
-  content:"favorite_outline"; 
-}
-
-.material-icons.card__info__box__favorite__button:hover::before{
-  content:"favorite"; 
-}
 
 .card__button__holder {
   text-align: right;

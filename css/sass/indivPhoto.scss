@@ -22,21 +22,13 @@
   font-size: 2.4rem;
 }
 
-.comp-colors2 {
-    // width: 100%;
-    display: flex;
-    // justify-content: left;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
 
 .color2 {
     /* background-color: #000; */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 125px;
-    height: 125px;
+    height: 75px;
   }
 
 .color2__label {
