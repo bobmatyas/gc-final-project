@@ -88,7 +88,7 @@ body {
 }
 
 #pal {
-  font-weight: 800px; 
+  font-weight: bolder; 
   color: #009688;
 }
 
@@ -320,12 +320,16 @@ body {
 
 .dark .card__info__box {
   background-color: #424242;
+  border-radius: 0px 0px 5px 5px;
+
 }
 
 .dark .card {
   border: 1px solid #303030;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .dark .card__image__container {
   border-bottom: 1px solid #212121;
+
 }

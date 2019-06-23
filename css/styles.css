@@ -627,6 +627,7 @@ input:checked + .slider:before {
 
 .card {
   border: 1px solid #666666;
+  border-radius: 0px 0px 5px 5px;
   margin: 20px;
   width: 300px;
   -webkit-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
@@ -735,7 +736,7 @@ input[type=text]:focus {
 }
 
 .home__search__bar__input__holder__box {
-  padding: 10px 10px 0 0;
+  padding: 15px 15px 0 0;
 }
 
 .home__search__bar__input__holder__label {
@@ -1073,7 +1074,7 @@ body {
 }
 
 #pal {
-  font-weight: 800px;
+  font-weight: bolder;
   color: #009688;
 }
 
@@ -1316,10 +1317,12 @@ body {
 
 .dark .card__info__box {
   background-color: #424242;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .dark .card {
   border: 1px solid #303030;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .dark .card__image__container {

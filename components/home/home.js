@@ -2,6 +2,8 @@ function HomeController($scope) {
 
   var ctrl = this;
 
+  alert("Welcome to PicturePalette. Simply start your search by choosing a color.");
+
 
   
 }
