@@ -12,6 +12,7 @@ browsers */
 @import 'background';
 
 @import 'header';
+@import 'colors';
 
 /* media query css is at the bottom of the file */
 
@@ -154,59 +155,61 @@ body {
 
 
 .red {
-  background-color: #F44336;
+  background-color: $red;
 }
 
 .orange {
-  background-color: #FF9800;
+  background-color: $orange;
 }
 
 .yellow {
-  background-color: #FFEB3B;
-  color: darkgray;
+  background-color: $yellow;
+  color: $darkgray;
 }
 
 .green {
-  background-color: #8BC34A;
+  background-color: $green;
 }
 
 .turquoise {
-  background-color: #009688;
+  background-color: $turquoise;
 }
 
 .blue {
-  background-color: #03A9F4;
+  background-color: $blue;
 }
 
 .purple {
-  background-color: #9C27B0;
+  background-color: $purple;
 }
 
 .pink {
-  background-color: #E91E63;
+  background-color: $pink;
 }
 
 .white {
   background-color: white;
-  color: darkgray;
+  color: $darkgray;
 }
 
 .black {
-  background-color: #0f0f0f;
+  background-color: $black;
 }
 
 .gray {
-  background-color: #9E9E9E;
+  background-color: $gray;
 }
 
 .brown {
-  background-color: #795548;
+  background-color: $brown;
 }
 
 .grayscale {
   background-image: linear-gradient(135deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
-  color: darkgray;
+  color: $darkgray;
 }
+
+
 
 .colorSelect {
   display: flex;
@@ -239,11 +242,12 @@ body {
 }
 
 .backColorContainer {
-  z-index: 1;
+  transform: 1s;
+  z-index: 100;
   position: absolute;
   width: 100%;
   display: flex;
-  transform: translateX(-90px) translateY(-190px);
+  transform: translateX(-90px) translateY(-250px);
   justify-content: center;
   align-items: center;
   padding: none;
@@ -252,11 +256,13 @@ body {
 }
 
 .backColor {
-  color: white;
-  opacity: .2;
+  transform: 1s;
+  font-variant: small-caps;
+  opacity: 1;
   font-size: 150px;
   font-weight: 700;
   text-align: center;
+  z-index: 100;
 }
 
 .ng-binding {
@@ -325,4 +331,52 @@ body {
 
 .dark .card__image__container {
   border-bottom: 1px solid #212121;
+}
+
+.redText {
+  color: $red;
+}
+
+.orangeText {
+  color: $orange;
+}
+
+.yellowText {
+  color: $yellow;
+}
+
+.greenText {
+  color: $green;
+}
+
+.turquoiseText {
+  color: $turquoise;
+}
+
+.blueText {
+  color: $blue;
+}
+
+.purpleText {
+  color: $purple;
+}
+
+.pinkText {
+  color: $pink;
+}
+
+.blackText {
+  color: $black;
+}
+
+.grayText {
+  color: $gray;
+}
+
+.brownText {
+  color: $brown;
+}
+
+.grayscaleText {
+  color: darkgray;
 }

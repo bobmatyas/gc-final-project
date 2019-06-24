@@ -632,7 +632,6 @@ input:checked + .slider:before {
   -webkit-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
   -moz-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
   box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
-  background: linear-gradient(45deg, rgba(143, 143, 143, 0.65) 0%, rgba(143, 143, 143, 0) 41%, rgba(143, 143, 143, 0) 100%);
 }
 
 .card:hover {
@@ -751,6 +750,7 @@ input[type=text]:focus {
 }
 
 .backgroundBody {
+  z-index: 20;
   text-align: center;
   width: 100%;
   height: 100%;
@@ -1215,11 +1215,12 @@ body {
 }
 
 .backColorContainer {
-  z-index: 1;
+  transform: 1s;
+  z-index: 100;
   position: absolute;
   width: 100%;
   display: flex;
-  transform: translateX(-90px) translateY(-190px);
+  transform: translateX(-90px) translateY(-250px);
   justify-content: center;
   align-items: center;
   padding: none;
@@ -1228,11 +1229,13 @@ body {
 }
 
 .backColor {
-  color: white;
-  opacity: 0.2;
+  transform: 1s;
+  font-variant: small-caps;
+  opacity: 1;
   font-size: 150px;
   font-weight: 700;
   text-align: center;
+  z-index: 100;
 }
 
 .ng-binding {
@@ -1317,6 +1320,54 @@ body {
 
 .dark .card__image__container {
   border-bottom: 1px solid #212121;
+}
+
+.redText {
+  color: #F44336;
+}
+
+.orangeText {
+  color: #FF9800;
+}
+
+.yellowText {
+  color: #FFEB3B;
+}
+
+.greenText {
+  color: #8BC34A;
+}
+
+.turquoiseText {
+  color: #009688;
+}
+
+.blueText {
+  color: #03A9F4;
+}
+
+.purpleText {
+  color: #9C27B0;
+}
+
+.pinkText {
+  color: #E91E63;
+}
+
+.blackText {
+  color: #0f0f0f;
+}
+
+.grayText {
+  color: #9E9E9E;
+}
+
+.brownText {
+  color: #795548;
+}
+
+.grayscaleText {
+  color: darkgray;
 }
 
 /*# sourceMappingURL=styles.css.map */

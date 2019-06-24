@@ -151,16 +151,17 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
  
    // angular animations tips: https://forums.asp.net/t/2094767.aspx?AngularJS+How+to+move+a+div+from+bottom+to+up
 
-  // <div class="backColorContainer">
-  //   <div class="backColor"> {{ selectedColor }} </div>
-  // </div>
 
 }
 
 angular.module('ColorApp').component('mainSearch', {
   template: `
       <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColorHex }};" > 
+        <div class="backColorContainer">
+          <span class="backColor {{selectedColor}}Text"> {{ selectedColor }} </span>
+        </div>
         <search-bar get-photos="$ctrl.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)" color="selectedColor"></search-bar>
+        
       </div>
       <div class="bodyBackground">
       <div class="color-grid  animate-show-hide" ng-hide="$ctrl.hideGrid">
@@ -171,7 +172,7 @@ angular.module('ColorApp').component('mainSearch', {
         </a>
       </div>
       </div>
-      
+
       <div class="search-results">
 
         <h2 ng-if="$ctrl.photos.length >= 1" class="search-results__heading">Results</h2>
