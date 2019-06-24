@@ -61,8 +61,26 @@ body {
   color: darkgray;
 }
 
+.bg-title {
+  justify-content: center;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  padding-top: 50px;
+  font-family: 'Open Sans', sans-serif;
+  color: #353F3E;
+  line-height: 1.6rem;
+}
 
+.title-pic{
+  text-align: center;
+  font-size: 2.6rem;
+}
 
+.title-pal{
+  text-align: center;
+  font-size: 2.6rem;
+}
 
 .dark .specText {
   font-size: 14px;
@@ -78,11 +96,20 @@ body {
 
 .boldText {
   font-weight: bolder;
+.title-all{
+  text-align: center;
+  font-size: 2.6rem;
+  font-style: italic;
 }
 
+#pal {
+  font-weight: bolder; 
+  color: #009688;
+}
 
-.home-text {
-  text-align: center;
+#pic {
+  font-weight: 800px; 
+  color: #9E9E9E;
 }
 
 .fonts {
@@ -322,15 +349,18 @@ body {
 
 .dark .card__info__box {
   background-color: #424242;
+  border-radius: 0px 0px 5px 5px;
+
 }
 
 .dark .card {
   border: 1px solid #303030;
-  background: linear-gradient(45deg, rgba(0,0,0,0.71) 0%,rgba(0,0,0,0.71) 10%,rgba(0,0,0,0) 50%,rgba(0,0,0,0) 100%);
+  border-radius: 0px 0px 5px 5px;
 }
 
 .dark .card__image__container {
   border-bottom: 1px solid #212121;
+
 }
 
 .redText {

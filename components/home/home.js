@@ -2,6 +2,8 @@ function HomeController($scope) {
 
   var ctrl = this;
 
+  // alert("Welcome to PicturePalette. Simply start your search by choosing a color.");
+
 
   
 }
@@ -9,9 +11,8 @@ function HomeController($scope) {
 angular.module('ColorApp').component('home', {
   template: `
       <section id="home">
-      <home-animation></home-animation>
-  
-  
+        
+
       <main-search></main-search>
 
 
