@@ -751,7 +751,7 @@ input[type=text]:focus {
 }
 
 .backgroundBody {
-  z-index: 20;
+  z-index: 1;
   text-align: center;
   width: 100%;
   height: 100%;
@@ -1047,26 +1047,9 @@ body {
   color: darkgray;
 }
 
-.dark .specText {
-  font-size: 14px;
-  font-weight: 400;
-  color: #9e9e9e;
-}
-
-.specText {
-  font-size: 14px;
-  font-weight: 400;
-  color: #686868;
-}
-
-.boldText {
-  font-weight: bolder;
-}
-
-.home-text {
 .bg-title {
   justify-content: center;
-  z-index: 999;
+  z-index: 1;
   position: absolute;
   width: 100%;
   padding-top: 50px;
@@ -1083,6 +1066,22 @@ body {
 .title-pal {
   text-align: center;
   font-size: 2.6rem;
+}
+
+.dark .specText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9e9e9e;
+}
+
+.specText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #686868;
+}
+
+.boldText {
+  font-weight: bolder;
 }
 
 .title-all {
@@ -1107,6 +1106,7 @@ body {
 }
 
 .bodyBackground {
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1352,11 +1352,7 @@ body {
 
 .dark .card {
   border: 1px solid #303030;
-<<<<<<< HEAD
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.71) 0%, rgba(0, 0, 0, 0.71) 10%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
-=======
   border-radius: 0px 0px 5px 5px;
->>>>>>> master
 }
 
 .dark .card__image__container {

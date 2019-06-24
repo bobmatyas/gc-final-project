@@ -63,7 +63,7 @@ body {
 
 .bg-title {
   justify-content: center;
-  z-index: 999;
+  z-index: 1;
   position: absolute;
   width: 100%;
   padding-top: 50px;
@@ -96,6 +96,8 @@ body {
 
 .boldText {
   font-weight: bolder;
+}
+
 .title-all{
   text-align: center;
   font-size: 2.6rem;
@@ -118,6 +120,7 @@ body {
 }
 
 .bodyBackground {
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
