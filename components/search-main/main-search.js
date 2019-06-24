@@ -118,6 +118,8 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
     *  */ 
 
    $scope.selectedColor = '';
+  //  $scope.hideBgTitle = 0;
+
  
    $scope.selectColor = (color) => {
      console.log('selectColor clicked');
@@ -125,6 +127,7 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
      $scope.selectedColorHex = color.hex;
      console.log(`Selected Color: ${$scope.selectedColor}`);
      ctrl.hideGrid = 1;
+     PhotoService.hideBgTitle = 1;
    }
  
 

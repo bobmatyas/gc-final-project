@@ -3,6 +3,9 @@ function PhotoService($http) {
   const service = this;
   service.favoriteArray = []
 
+  service.hideBgTitle = 0;
+
+
   service.getPhotos = (queryText, photoCategory, photoOrientation, selectedColor) => {
     return $http.get('https://pixabay.com/api/', {
       params: {
