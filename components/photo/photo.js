@@ -19,7 +19,6 @@ function PhotoController(PhotoService, $q, $scope) {
           console.log(response);
 
           response.tags.forEach( (color,  index) => {
-            console.log(color);
             response.tags[index].rgb = ctrl.hexToRgb(color.color);
           })
 
