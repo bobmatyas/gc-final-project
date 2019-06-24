@@ -17,7 +17,14 @@ function PhotoController(PhotoService, $q, $scope) {
         .then( (response) => {
           console.log(`color scheme`);
           console.log(response);
+
+          response.tags.forEach( (color,  index) => {
+            console.log(color);
+            response.tags[index].rgb = ctrl.hexToRgb(color.color);
+          })
+
           ctrl.colorScheme = response.tags;
+
           console.log(response.data);
           }
         )
@@ -27,7 +34,8 @@ function PhotoController(PhotoService, $q, $scope) {
         });
     }
 
-    let hexToRgb = (color) =>  {
+    ctrl.hexToRgb = (color) =>  {
+
       var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
       return result ? {
         r: parseInt(result[1], 16),
@@ -35,10 +43,8 @@ function PhotoController(PhotoService, $q, $scope) {
         b: parseInt(result[3], 16)
       } : null;
     }
+  };
 
-    console.log(hexToRgb);
-  };  
-  
 {/* <div class="photo-bar">
             <div class="card__info__box__favorite">
               <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)" color="selectedColor""></i>
@@ -51,7 +57,7 @@ function PhotoController(PhotoService, $q, $scope) {
   <div class="total-container">
     <div class="photo-container">
       <div class="indiv-image">
-        <img class="imageSize" id="indivPhoto" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image); hexToRgb(color.color)" />
+        <img class="imageSize" id="indivPhoto" ng-src="{{ $ctrl.image }}" ng-click="$ctrl.imageColor($ctrl.image);" />
           <div class="photo-bar">
             <div class="card__info__box__favorite">
               <i class="material-icons card__info__box__favorite__button"  ng-click="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)"></i>
@@ -64,16 +70,16 @@ function PhotoController(PhotoService, $q, $scope) {
           <h2 class="comp-colors-title">Need design inspiration?</h2>
           <h3>Click the image for complimentary colors you can use with this photo.</h3><br>
         </div>
-         
+
         <div class="color-grid2">
-          <div class="comp-colors2"> 
+          <div class="comp-colors2">
             <div class="comp-colors" ng-repeat="color in $ctrl.colorScheme">
               <div class="color2" style="background-color: {{ color.color}}; " ></div>
-                <p>{{ color.label }} <br> HEX: {{ color.color }} <br> RGB: {{ hex-to-rgb }}</p>
+                <p>{{ color.label }} <br> HEX: {{ color.color }} <br> RGB: {{ color.rgb }}</p>
               </div>
-            </div>              
+            </div>
           </div>
-        </div>      
+        </div>
       </div>
 
       <div class="sep">
@@ -81,7 +87,7 @@ function PhotoController(PhotoService, $q, $scope) {
       </div>
     </div>
   </div>
-      `, 
+      `,
     controller: PhotoController,
     bindings: {
     photo: '<',
