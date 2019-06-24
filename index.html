@@ -9,11 +9,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,800i|Sansita:900i&display=swap" rel="stylesheet">
 
+<!-- Include Bootstrap CSS CDN link -->
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
 
 </head>
 <body class="{{$root.bodyClass}} bodyBackground">
   <menu-header></menu-header>
-  <pop-up></pop-up>
   <background></background>
   
 
@@ -21,6 +22,8 @@
   <main id="main" data-ng-view>
     <!-- anything configured in the route is going to be injected here -->
   </main>
+  <pop-up></pop-up>
+
   
 
   <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
@@ -48,7 +51,8 @@
   <script src="components/background/background.js"></script>
   <script src="components/pop-up/pop-up.js"></script>
   
-
+<!-- Include UI Bootstrap library -->
+<!-- <script src="js/ui-bootstrap-tpls-0.14.3.min.js"></script> -->
 
   <!-- Add jQuery Functionality -->
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
