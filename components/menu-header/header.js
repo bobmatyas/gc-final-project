@@ -10,6 +10,7 @@ function MenuHeaderController($rootScope, $scope) {
     } else if ($rootScope.bodyClass) {
       $rootScope.bodyClass = '';
     }
+    console.log($rootScope.bodyClass);
   }
   
 }
@@ -32,20 +33,14 @@ angular.module('ColorApp').component('menuHeader', {
                 <br>favorites   
               </a>
             </li>
-            <!--
-            
-            <li>
-              <label class="switch">
-                <input type="checkbox" ng-click="$ctrl.toggleDark()">
-                <span class="slider round"></span>
-              </label>
-            </li> 
-            -->
             <li ng-click="$ctrl.toggleDark()">
-              <i class="material-icons">
-                brightness_medium
+              <i ng-if="typeof($rootScope.bodyClass)!==undefined" class="material-icons">
+                brightness_2
               </i>
-              <br>dark mode    
+              <i ng-if="typeof($rootScope.bodyClass)===dark" class="material-icons">
+                brightness_4
+              </i>
+              <br> contrast   
             </li>
 
           </ul>

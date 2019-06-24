@@ -357,21 +357,11 @@ template {
 }
 
 .color-palette {
-  padding-left: 20px;
-  display: flex;
-  justify-content: left;
-  flex-wrap: wrap;
-  flex-direction: column;
+  padding: 5%;
 }
 
 .comp-colors-title {
   font-size: 2.4rem;
-}
-
-.comp-colors2 {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
 }
 
 .color2 {
@@ -379,26 +369,21 @@ template {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
+  height: 75px;
 }
 
-.sep {
-  color: darkslategray;
-  padding-top: 15px;
-  padding-bottom: 15px;
+.color2__label {
+  text-transform: uppercase;
+  font-size: 1.3rem;
 }
 
 .photo-bar {
-  height: 40px;
-  border: 1px solid #666666;
-  background-color: #fff;
-  margin-top: -15px;
-  position: relative;
-  z-index: 2000;
-  border-radius: 0px 0px 5px 5px;
-  padding-top: 5px;
-  padding-right: 8px;
+  background-color: #eee;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
 }
 
 .imageSize {
@@ -664,21 +649,13 @@ input:checked + .slider:before {
   padding: 5%;
 }
 
-.card__info__box__favorite {
+.card__info__box__favorites {
   text-align: right;
 }
 
 .card__info__box__favorite__button {
   cursor: pointer;
   color: red;
-}
-
-.material-icons.card__info__box__favorite__button::before {
-  content: "favorite_outline";
-}
-
-.material-icons.card__info__box__favorite__button:hover::before {
-  content: "favorite";
 }
 
 .card__button__holder {
@@ -691,9 +668,9 @@ input:checked + .slider:before {
 
 .button {
   border-radius: 7px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #eee;
 }
 
@@ -717,6 +694,7 @@ input[type=text] {
   padding: 10px;
   border: 1px solid #fff;
   border-radius: 3px;
+  font-size: 16px;
 }
 
 input[type=text]:focus {
@@ -748,6 +726,7 @@ input[type=text]:focus {
   padding: 7px;
   border-radius: 3px;
   margin-top: 9px;
+  font-size: 16px;
 }
 
 .backgroundBody {
@@ -1329,6 +1308,18 @@ body {
 
   .color-palette {
     width: 50%;
+    padding-left: 50px;
+  }
+
+  .comp-colors2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .color2 {
+    width: 125px;
+    height: 125px;
   }
 }
 .dark {
@@ -1345,7 +1336,7 @@ body {
   border-bottom: 2px solid #212121;
 }
 
-.dark .card__info__box {
+.dark .card__info__box, .dark .photo-bar {
   background-color: #424242;
   border-radius: 0px 0px 5px 5px;
 }
