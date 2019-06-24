@@ -19,14 +19,13 @@ angular.module('ColorApp').component('photoCard', {
       </div>
 
       <div class="card__info__box__popularity">
-        <p>
-          <strong>Downloads:</strong>  {{ $ctrl.downloads | number}} <br />
-          <strong>Views:</strong> {{ $ctrl.views | number }}
+
+        <p class="specText">
+          <span class="boldText">Downloads:</span>  {{ $ctrl.downloads | number}} <br />
+          <span class="boldText">Views:</span> {{ $ctrl.views | number }}
         </p>
-
-        <p ng-if="$ctrl.tags"><strong>Tags</strong><p>
-
-        <p ng-if="$ctrl.tags">{{ $ctrl.tags }}</p>
+        <p ng-if="$ctrl.tags" class="specText">
+        <span class="boldText">Tags:</span> {{ $ctrl.tags }}</p>
 
       </div>
 
