@@ -60,14 +60,41 @@ body {
   color: darkgray;
 }
 
+.bg-title {
+  justify-content: center;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  padding-top: 50px;
+  font-family: 'Open Sans', sans-serif;
+  color: #353F3E;
+  line-height: 1.6rem;
+}
 
-
-
-
-
-
-.home-text {
+.title-pic{
   text-align: center;
+  font-size: 2.6rem;
+}
+
+.title-pal{
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.title-all{
+  text-align: center;
+  font-size: 2.6rem;
+  font-style: italic;
+}
+
+#pal {
+  font-weight: bolder; 
+  color: #009688;
+}
+
+#pic {
+  font-weight: 800px; 
+  color: #9E9E9E;
 }
 
 .fonts {
@@ -302,12 +329,16 @@ body {
 
 .dark .card__info__box {
   background-color: #424242;
+  border-radius: 0px 0px 5px 5px;
+
 }
 
 .dark .card {
   border: 1px solid #303030;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .dark .card__image__container {
   border-bottom: 1px solid #212121;
+
 }
