@@ -7,18 +7,17 @@
   <title>PicturePalette</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans%7CSansita:900i&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,800i|Sansita:900i&display=swap" rel="stylesheet">
 
 </head>
-<body class="{{$root.bodyClass}} bodyBackground">
+<body class="{{$root.bodyClass}}">
   <menu-header></menu-header>
   <background></background>
-  
   
   <main id="main" data-ng-view>
     <!-- anything configured in the route is going to be injected here -->
   </main>
+
   
 
   <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
@@ -40,8 +39,6 @@
 
   <script src="components/home/home.js"></script>
   <script src="components/menu-header/header.js"></script>
-  <script src="components/about/about.js"></script>
-  <script src="components/photos/photos.js"></script>
   <script src="components/favorites/favorites.js"></script>
   <script src="components/photo/photo.js"></script>
   <script src="components/search-main/main-search.js"></script> 

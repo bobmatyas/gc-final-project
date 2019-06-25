@@ -612,6 +612,7 @@ input:checked + .slider:before {
 
 .card {
   border: 1px solid #666666;
+  border-radius: 0px 0px 5px 5px;
   margin: 20px;
   width: 300px;
   -webkit-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
@@ -713,7 +714,7 @@ input[type=text]:focus {
 }
 
 .home__search__bar__input__holder__box {
-  padding: 10px 10px 0 0;
+  padding: 15px 15px 0 0;
 }
 
 .home__search__bar__input__holder__label {
@@ -729,11 +730,13 @@ input[type=text]:focus {
 }
 
 .backgroundBody {
+  z-index: 1;
   text-align: center;
   width: 100%;
   height: 100%;
   overflow: hidden;
   opacity: 0.5;
+  position: relative;
 }
 
 .rowContainer {
@@ -1023,8 +1026,57 @@ body {
   color: darkgray;
 }
 
-.home-text {
+.bg-title {
+  justify-content: center;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  padding-top: 50px;
+  font-family: "Open Sans", sans-serif;
+  color: #353F3E;
+  line-height: 1.6rem;
+}
+
+.title-pic {
   text-align: center;
+  font-size: 2.6rem;
+}
+
+.title-pal {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.dark .specText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9e9e9e;
+}
+
+.specText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #686868;
+}
+
+.boldText {
+  font-weight: bolder;
+}
+
+.title-all {
+  text-align: center;
+  font-size: 2.6rem;
+  font-style: italic;
+}
+
+#pal {
+  font-weight: bolder;
+  color: #009688;
+}
+
+#pic {
+  font-weight: 800px;
+  color: #9E9E9E;
 }
 
 .fonts {
@@ -1032,13 +1084,23 @@ body {
   font-weight: 900;
 }
 
+.bodyBackground {
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-75px);
+}
+
 .color-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   transition: all 1s ease-in-out;
   height: auto;
   width: 100%;
+  max-width: 1200px;
 }
 
 .animate-show-hide.ng-hide {
@@ -1168,11 +1230,12 @@ body {
 }
 
 .backColorContainer {
-  z-index: 1;
+  transform: 1s;
+  z-index: 100;
   position: absolute;
   width: 100%;
   display: flex;
-  transform: translateX(-90px) translateY(-190px);
+  transform: translateX(-90px) translateY(-250px);
   justify-content: center;
   align-items: center;
   padding: none;
@@ -1181,11 +1244,13 @@ body {
 }
 
 .backColor {
-  color: white;
-  opacity: 0.2;
+  transform: 1s;
+  font-variant: small-caps;
+  opacity: 1;
   font-size: 150px;
   font-weight: 700;
   text-align: center;
+  z-index: 100;
 }
 
 .ng-binding {
@@ -1273,14 +1338,64 @@ body {
 
 .dark .card__info__box, .dark .photo-bar {
   background-color: #424242;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .dark .card {
   border: 1px solid #303030;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .dark .card__image__container {
   border-bottom: 1px solid #212121;
+}
+
+.redText {
+  color: #F44336;
+}
+
+.orangeText {
+  color: #FF9800;
+}
+
+.yellowText {
+  color: #FFEB3B;
+}
+
+.greenText {
+  color: #8BC34A;
+}
+
+.turquoiseText {
+  color: #009688;
+}
+
+.blueText {
+  color: #03A9F4;
+}
+
+.purpleText {
+  color: #9C27B0;
+}
+
+.pinkText {
+  color: #E91E63;
+}
+
+.blackText {
+  color: #0f0f0f;
+}
+
+.grayText {
+  color: #9E9E9E;
+}
+
+.brownText {
+  color: #795548;
+}
+
+.grayscaleText {
+  color: darkgray;
 }
 
 /*# sourceMappingURL=styles.css.map */

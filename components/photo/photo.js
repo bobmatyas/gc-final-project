@@ -1,18 +1,10 @@
-function PhotoController(PhotoService, $q) {
-
-
+function PhotoController(PhotoService, $q, $scope) {
     var ctrl = this;
     this.service = PhotoService;
 
     ctrl.image = PhotoService.photo;
 
-    //need to pull actual complimentary colors from API
-    // ctrl.compColors = ["red", "orange", "yellow", "green", "turquoise"];
-
-    // ctrl.addFavorite = (favoriteParam) => {
-    //   PhotoService.setFavorites(favoriteParam);
-    //   console.log("you clicked it");
-    // }
+    ctrl.color = PhotoService.color;
 
     ctrl.addFavorite = (id, largeFormatURL, webFormatURL, tags, downloads, views) => {
       PhotoService.setFavorites(id, largeFormatURL, webFormatURL, tags, downloads, views);
@@ -25,6 +17,10 @@ function PhotoController(PhotoService, $q) {
         .then( (response) => {
           console.log(`color scheme`);
           console.log(response);
+          response.tags.forEach( (color,  index) => {
+            response.tags[index].rgb = ctrl.hexToRgb(color.color);
+          })
+
           ctrl.colorScheme = response.tags;
           /* needs to test: builds copyable palette */
           ctrl.buildCopyablePalette(response.tags);
@@ -36,11 +32,14 @@ function PhotoController(PhotoService, $q) {
           throw error;
         });
     }
-    
-    ctrl.addFavorite = (id, largeFormatURL, webFormatURL, tags, downloads, views) => {
-      PhotoService.setFavorites(id, largeFormatURL, webFormatURL, tags, downloads, views);
-      console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
-      console.log("you clicked it");
+
+    ctrl.hexToRgb = (color) =>  {
+      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
+      return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+      } : null;
     }
 
     ctrl.colorTest = [ 
@@ -109,6 +108,17 @@ function PhotoController(PhotoService, $q) {
               {{ color.label }} <br />
               {{ color.color }}
             </p>
+            </div>
+          </div>
+        </div>
+         
+        <div class="color-grid2">
+          <div class="comp-colors2"> 
+            <div class="comp-colors" ng-repeat="color in $ctrl.colorScheme">
+              <div class="color2" style="background-color: {{ color.color}}; " ></div>
+                <p>{{ color.label }} <br> HEX: {{ color.color }} <br> RGB: {{ color.rgb }}</p>
+              </div>
+            </div>              
           </div>
         </div>
   
