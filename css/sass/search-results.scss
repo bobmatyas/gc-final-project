@@ -4,6 +4,13 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: $lightGray;
+}
+
+.dark {
+  .resultsContainer {
+    background-color: $navMenuGray;
+  }
 }
 
 .search-results {

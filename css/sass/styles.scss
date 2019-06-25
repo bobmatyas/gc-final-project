@@ -4,7 +4,7 @@ browsers */
 @import 'normalize';
 
 /* these imports are for individual components/sections of the app */
-
+@import 'colors';
 @import 'indivPhoto';
 @import 'header';
 @import 'search-results';
@@ -12,7 +12,6 @@ browsers */
 @import 'background';
 
 @import 'header';
-@import 'colors';
 
 /* media query css is at the bottom of the file */
 
@@ -106,12 +105,30 @@ body {
 
 #pal {
   font-weight: bolder; 
-  color: #009688;
+  color: $turquoise;
+}
+
+.headerColor {
+  color: $darkergray;
+}
+
+.dark {
+  #pal {
+    font-weight: bolder; 
+    color: $red;
+  }
+  .headerColor {
+    color: $darkgray;
+  }
+  #pic {
+    font-weight: 800px; 
+    color: $orange;
+  }
 }
 
 #pic {
   font-weight: 800px; 
-  color: #9E9E9E;
+  color: $pink;
 }
 
 .fonts {
@@ -285,6 +302,11 @@ body {
   padding: none;
   margin: none;
   text-align: center;
+}
+
+.favoriteBanner {
+  transform: translateX(-5px) translateY(-170px);
+  color: $darkgray;
 }
 
 .backColor {
