@@ -1,4 +1,4 @@
-function FavoritesPageController(PhotoService) {
+function FavoritesPageController(PhotoService, $location) {
     const ctrl = this;
 
     ctrl.favoriteArray = PhotoService.favoriteArray;
@@ -16,6 +16,13 @@ function FavoritesPageController(PhotoService) {
     ctrl.setRemoveFavorites = (favorite) => {
       PhotoService.setRemoveFavorites(favorite)
       console.log("you removed it!");
+    }
+
+    ctrl.individualPhotoSave = (photo) => {
+      PhotoService.photo = photo;
+      $location.path('/photo');
+      console.log("getting palette");
+
     }
 
   }
