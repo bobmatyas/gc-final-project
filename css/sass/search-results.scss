@@ -53,7 +53,7 @@
   padding: 5%;
 }
 
-.card__info__box__favorite {
+.card__info__box__favorites {
   text-align: right;
 }
 
@@ -62,13 +62,6 @@
   color: $red;
 }
 
-.material-icons.card__info__box__favorite__button::before{
-  content:"favorite_outline"; 
-}
-
-.material-icons.card__info__box__favorite__button:hover::before{
-  content:"favorite"; 
-}
 
 .card__button__holder {
   text-align: right;
@@ -80,9 +73,9 @@
 
 .button {
   border-radius: 7px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #eee;
 }
 

@@ -1,11 +1,13 @@
-function BackgroundController() {
+function BackgroundController(PhotoService) {
     var ctrl = this;
+
+    this.service = PhotoService;
   
   }
   
   angular.module('ColorApp').component('background', {
     template: `
-    <div class="bg-title">
+    <div class="bg-title" ng-if="$ctrl.service.hideBgTitle===0">
         <h1 class="title-pic">Find the perfect <span id="pic">picture.</span></h1> <h1 class="title-pal">Find the perfect <span id="pal">palette.</span></h1>
         <h2 class="title-all">All in one place.</h2>
     </div>

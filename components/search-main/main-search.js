@@ -118,6 +118,8 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
     *  */ 
 
    $scope.selectedColor = '';
+  //  $scope.hideBgTitle = 0;
+
  
    $scope.selectColor = (color) => {
      console.log('selectColor clicked');
@@ -125,6 +127,7 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
      $scope.selectedColorHex = color.hex;
      console.log(`Selected Color: ${$scope.selectedColor}`);
      ctrl.hideGrid = 1;
+     PhotoService.hideBgTitle = 1;
    }
  
 
@@ -182,9 +185,16 @@ angular.module('ColorApp').component('mainSearch', {
           <div class="card" ng-repeat="photo in $ctrl.photos"> 
             
             <photo-card 
-            photo="photo.largeImageURL" 
-            photo-web="photo.webformatURL" tags="photo.tags" downloads="photo.downloads" id="photo.id" views="photo.views" individual-photo-save="$ctrl.individualPhotoSave(photo)"
-            add-favorite="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)" color="selectedColor"></photo-card>
+              photo="photo.largeImageURL" 
+              photo-web="photo.webformatURL" 
+              tags="photo.tags" 
+              downloads="photo.downloads" 
+              id="photo.id" 
+              views="photo.views" 
+              individual-photo-save="$ctrl.individualPhotoSave(photo)"
+              add-favorite="$ctrl.addFavorite(id, largeFormatURL, webFormatURL, tags, downloads, views)" 
+              color="selectedColor">
+            </photo-card>
 
           </div>
         </div>

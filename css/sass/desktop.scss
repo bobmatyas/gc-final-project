@@ -34,4 +34,17 @@
   .backColor {
     font-size: 110px;
   }
+  padding-left: 50px;
+}
+
+
+.comp-colors2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.color2 {
+  width: 125px;
+  height: 125px;
 }

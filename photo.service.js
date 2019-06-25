@@ -3,6 +3,9 @@ function PhotoService($http) {
   const service = this;
   service.favoriteArray = []
 
+  service.hideBgTitle = 0;
+
+
   service.getPhotos = (queryText, photoCategory, photoOrientation, selectedColor) => {
     return $http.get('https://pixabay.com/api/', {
       params: {
@@ -10,6 +13,7 @@ function PhotoService($http) {
         lang: 'en',
         image_type: 'photo',
         safesearch: 'true',
+        per_page: 32,
         q: queryText,
         category: photoCategory,
         orientation: photoOrientation,
@@ -45,20 +49,31 @@ function PhotoService($http) {
   }
 
   service.setFavorites = (id, largeFormatURL, webFormatURL, tags, downloads, views) =>{
-    let newFavorite = {
-      id: id,
-      photo: largeFormatURL,
-      photoWeb: webFormatURL,
-      tags: tags, 
-      downloads: downloads,
-      views: views
+    if (service.isInFavorites(id) !== false) {
+      console.log("already in favorites");
     }
-    console.log(newFavorite);
-    service.favoriteArray.push(newFavorite);
-    console.log(service.favoriteArray)
+    else {
+
+      let newFavorite = {
+        id: id,
+        photo: largeFormatURL,
+        photoWeb: webFormatURL,
+        tags: tags, 
+        downloads: downloads,
+        views: views
+      }
+      console.log(newFavorite);
+      service.favoriteArray.push(newFavorite);
+      console.log(service.favoriteArray)
+   }
   }
-  service.setRemoveFavorites = (favorite) =>{
-    service.favoriteArray.splice(service.favoriteArray.indexOf(favorite), 1);
+
+  service.setRemoveFavorites = (favorite) => {
+    console.log(`favorite to remove: ${favorite}`);
+    let i = service.isInFavorites(favorite);
+    if (i !== false) {
+      service.favoriteArray.splice(i, 1);
+    }
   }
   
   service.photo = '';
@@ -73,6 +88,17 @@ function PhotoService($http) {
     $location.path('/photo');
   }
 
+  service.isInFavorites = (photo_id) => {
+    console.log(`is in favorites called`);
+    console.log(photo_id);
+    console.log(service.favoriteArray);
+    for (var i = 0 ; i < service.favoriteArray.length; i++) {
+      if (service.favoriteArray[i].id == photo_id) {
+          return i;
+      }
+    }
+    return false;
+  }
 
 }
 
