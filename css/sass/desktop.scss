@@ -22,6 +22,18 @@
 
 .color-palette {
   width: 50%;
+}
+
+.backColorContainer {
+  flex-direction: row;
+  transform: translateX(-90px) translateY(-270px);
+
+  .grayText {
+    font-size: 60px;
+  }
+  .backColor {
+    font-size: 110px;
+  }
   padding-left: 50px;
 }
 

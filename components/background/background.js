@@ -24,6 +24,9 @@ function BackgroundController(PhotoService) {
         <div class="rowContainer">
             <div class="row3"></div><div class="row1"></div><div class="row5"></div><div class="row3"></div><div class="row1"></div><div class="row5"></div><div class="row1"></div><div class="row4"></div><div class="row2"></div><div class="row5"></div><div class="row3"></div><div class="row5"></div><div class="row2"></div><div class="row5"></div><div class="row4"></div><div class="row1"></div><div class="row4"></div><div class="row1"></div><div class="row3"></div><div class="row5"></div><div class="row4"></div><div class="row1"></div><div class="row4"></div><div class="row1"></div><div class="row3"></div><div class="row5"></div><div class="row4"></div><div class="row1"></div><div class="row3"></div><div class="row5"></div>
         </div>
+        <div class="rowContainer">
+            <div class="row2"></div><div class="row3"></div><div class="row1"></div><div class="row5"></div><div class="row3"></div><div class="row2"></div><div class="row4"></div><div class="row3"></div><div class="row1"></div><div class="row2"></div><div class="row4"></div><div class="row1"></div><div class="row5"></div><div class="row3"></div><div class="row2"></div><div class="row3"></div><div class="row5"></div><div class="row2"></div><div class="row5"></div><div class="row4"></div><div class="row2"></div><div class="row2"></div><div class="row3"></div><div class="row2"></div><div class="row5"></div><div class="row4"></div><div class="row3"></div><div class="row5"></div><div class="row2"></div><div class="row4"></div>
+        </div>
      </div> `,
     controller: BackgroundController,
   });
