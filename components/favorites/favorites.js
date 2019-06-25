@@ -25,7 +25,9 @@ function FavoritesPageController(PhotoService) {
   .component('favoritesPage', {
     template: `
     <div ng-if="$ctrl.favoriteArray.length >= 1" class="resultsContainer">
-
+      <div class="backColorContainer favoriteBanner">
+        <span class="backColor">  FAVORITES  </span>
+      </div>
       <div class="card" ng-repeat="photo in $ctrl.favoriteArray"> 
         <photo-card photo="photo.photo" photo-web="photo.photoWeb" tags="photo.tags" downloads="photo.downloads" id="photo.id" views="photo.views" individual-photo-save="$ctrl.individualPhotoSave(photo)" set-remove-favorites="$ctrl.setRemoveFavorites(favorite)" color="selectedColor"></photo-card>
       </div>
