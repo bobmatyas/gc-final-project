@@ -4,6 +4,7 @@ function PhotoService($http) {
   service.favoriteArray = []
 
   service.hideBgTitle = 0;
+  service.hideWelcome = 0;
 
 
   service.getPhotos = (queryText, photoCategory, photoOrientation, selectedColor) => {
