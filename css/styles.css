@@ -1330,6 +1330,33 @@ body {
   color: #000;
 }
 
+.welcome {
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  color: #353F3E;
+  line-height: 1.6rem;
+  background-color: #FFEB3B;
+  border-radius: 0.4em;
+}
+
+.welcome:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #FFEB3B;
+  border-top: 0;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
 @media only screen and (min-width: 600px) {
   .color {
     /* background-color: #000; */
