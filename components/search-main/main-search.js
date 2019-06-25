@@ -1,6 +1,8 @@
 function MainSearchController(PhotoService, $q, $scope, $location) {
 
   var ctrl = this;
+  this.service = PhotoService;
+
 
   // this function gets the photos based on user search criteria
 
@@ -128,6 +130,7 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
      console.log(`Selected Color: ${$scope.selectedColor}`);
      ctrl.hideGrid = 1;
      PhotoService.hideBgTitle = 1;
+     PhotoService.hideWelcome = 1;
    }
  
 
@@ -159,6 +162,8 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
 
 angular.module('ColorApp').component('mainSearch', {
   template: `
+    
+
       <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColorHex }};" > 
         <div class="backColorContainer">
           <span class="grayText">search </span><span class="backColor {{selectedColor}}Text">  {{ selectedColor }}  </span><span class="grayText"> photos</span>
@@ -174,6 +179,10 @@ angular.module('ColorApp').component('mainSearch', {
           </div>
         </a>
       </div>
+      </div>
+
+      <div class="welcome" ng-if="$ctrl.service.hideWelcome===0">
+        <h1>Simply search by selecting a color.</h1>
       </div>
 
       <div class="search-results">
