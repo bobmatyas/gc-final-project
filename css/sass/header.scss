@@ -1,3 +1,5 @@
+@import 'colors';
+
 .logo {
   font-family: 'Sansita', sans-serif;
   font-size: 2.6rem;
@@ -49,7 +51,11 @@
 }
 
 .navigation-menu li:hover {
-  color: red;
+  color: $turquoise;
+}
+
+.dark .navigation-menu li:hover {
+  color: $red;
 }
 
 /* The switch - the box around the slider */

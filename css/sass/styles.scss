@@ -120,7 +120,7 @@ body {
 }
 
 .bodyBackground {
-  z-index: 50;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +128,7 @@ body {
 }
 
 .color-grid {
+  z-index: 999;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -194,7 +195,7 @@ body {
 
 .yellow {
   background-color: $yellow;
-  color: $darkgray;
+  color: $darkgray !important;
 }
 
 .green {
@@ -219,7 +220,7 @@ body {
 
 .white {
   background-color: white;
-  color: $darkgray;
+  color: $darkgray !important;
 }
 
 .black {
@@ -236,7 +237,7 @@ body {
 
 .grayscale {
   background-image: linear-gradient(135deg, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
-  color: $darkgray;
+  color: $darkgray !important;
 }
 
 
@@ -277,9 +278,10 @@ body {
   position: absolute;
   width: 100%;
   display: flex;
-  transform: translateX(-90px) translateY(-250px);
+  transform: translateX(-25px) translateY(-270px);
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: none;
   margin: none;
   text-align: center;
@@ -287,9 +289,10 @@ body {
 
 .backColor {
   transform: 1s;
-  font-variant: small-caps;
+  padding: 0 20px;
+  text-transform: uppercase;
   opacity: 1;
-  font-size: 150px;
+  font-size: 55px;
   font-weight: 700;
   text-align: center;
   z-index: 100;
@@ -412,4 +415,10 @@ body {
 
 .grayscaleText {
   color: darkgray;
+}
+
+.grayText {
+  color: $darkgray;
+  font-size: 50px;
+  text-transform: uppercase;
 }
