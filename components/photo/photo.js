@@ -17,11 +17,12 @@ function PhotoController(PhotoService, $q, $scope) {
         .then( (response) => {
           console.log(`color scheme`);
           console.log(response);
-          response.tags.forEach( (color,  index) => {
+          response.tags.forEach( (color, index) => {
             response.tags[index].rgb = ctrl.hexToRgb(color.color);
           })
 
           ctrl.colorScheme = response.tags;
+          console.log(`response tags: ${response.tags}`);
           /* needs to test: builds copyable palette */
           ctrl.buildCopyablePalette(response.tags);
           console.log(response.data);
@@ -35,11 +36,13 @@ function PhotoController(PhotoService, $q, $scope) {
 
     ctrl.hexToRgb = (color) =>  {
       var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(color);
-      return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-      } : null;
+
+      var red = parseInt(result[1], 16);
+      var green = parseInt(result[2], 16)
+      var blue = parseInt(result[3], 16)
+      var rgbPalette = `(${red}, ${green}, ${blue})`;
+
+      return rgbPalette;
     }
 
     ctrl.colorTest = [ 
@@ -56,8 +59,8 @@ function PhotoController(PhotoService, $q, $scope) {
 
     ctrl.buildCopyablePalette = (colorTest) => {
       colorTest.forEach( function(element) {
-        ctrl.copyablePalette += `${element.label} / ${element.color}\n`
-        console.log(ctrl.copyablePalette);
+        ctrl.copyablePalette += `${element.label} / ${element.color} / ${element.rgb} \n`
+        //console.log(ctrl.copyablePalette);
       });
 
     }
@@ -100,31 +103,26 @@ function PhotoController(PhotoService, $q, $scope) {
         </div>
   
         <div class="comp-colors2">
-          <!-- test code swap out for line above -->
-  
-          <div class="comp-colors" ng-repeat="color in $ctrl.colorTest">
+
+          <div class="comp-colors" ng-repeat="color in $ctrl.colorScheme">
             <div class="color2" style="background-color: {{ color.color }}; "></div>
             <p class="color2__label">
-              {{ color.label }} <br />
-              {{ color.color }}
+              {{ color.label }} <br /><br />
+              HEX: <br />
+              {{ color.color }} <br /><br />
+              RGB: {{ color.rgb }}
             </p>
             </div>
           </div>
+
+          <button class="button" ngclipboard data-clipboard-text="{{ $ctrl.copyablePalette }}">
+            <i class="material-icons md-18" style="font-size: 16px;">file_copy</i> Copy to clipboard
+          </button>
+
         </div>
          
-        <div class="color-grid2">
-          <div class="comp-colors2"> 
-            <div class="comp-colors" ng-repeat="color in $ctrl.colorScheme">
-              <div class="color2" style="background-color: {{ color.color}}; " ></div>
-                <p>{{ color.label }} <br> HEX: {{ color.color }} <br> RGB: {{ color.rgb }}</p>
-              </div>
-            </div>              
-          </div>
-        </div>
-  
-        <button class="button" ngclipboard data-clipboard-text="{{ $ctrl.copyablePalette }}">
-            <i class="material-icons .md-18">file_copy</i> Copy to clipboard
-        </button>
+
+
       </div>
     </div>
   </div>
