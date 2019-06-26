@@ -411,6 +411,9 @@ template {
   color: #666666;
   text-decoration: none;
 }
+.dark h2 {
+  color: white;
+}
 
 .navigation-container {
   display: flex;
@@ -863,6 +866,9 @@ input[type=text]:focus {
 .dark .logo a {
   color: #666666;
   text-decoration: none;
+}
+.dark h2 {
+  color: white;
 }
 
 .navigation-container {
