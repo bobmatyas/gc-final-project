@@ -95,11 +95,7 @@ function PhotoController(PhotoService, $q, $scope) {
   
       <div class="color-palette">
         <div>
-          <h1 class="comp-colors-title">Need design inspiration?</h1>
-          <h2>
-            Click the image for complimentary colors you can use with this photo.
-          </h2>
-          <br />
+          <h1 class="comp-colors-title">Color Palette</h1>
         </div>
   
         <div class="comp-colors2">

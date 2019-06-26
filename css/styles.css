@@ -357,11 +357,19 @@ template {
 }
 
 .color-palette {
-  padding: 5%;
+  padding-left: 5%;
 }
 
 .comp-colors-title {
   font-size: 2.4rem;
+  color: #353F3E;
+}
+
+.dark .comp-colors-title {
+  color: white;
+}
+.dark .photo-bar {
+  color: #353F3E;
 }
 
 .color2 {
