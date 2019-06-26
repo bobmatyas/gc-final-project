@@ -182,7 +182,7 @@ angular.module('ColorApp').component('mainSearch', {
       </div>
 
       <div class="welcome" ng-if="$ctrl.service.hideWelcome===0">
-        <h1>Simply search by selecting a color.</h1>
+        <h1>Simply start searching by selecting a color.</h1>
       </div>
 
       <div class="search-results">
