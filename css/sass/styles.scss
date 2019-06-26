@@ -38,7 +38,6 @@ $color-4: #fff;
   box-sizing: border-box;
 }
 
-
 html {
   font-size: $root-font-size;
 }
@@ -52,7 +51,13 @@ body {
   width: 100vw;
 }
 
+h2 {
+  color: $darkergray;
+}
 
+label {
+  color: $darkergray;
+}
 
 .cardSpec {
   padding: 10px 0;
@@ -236,12 +241,18 @@ body {
 }
 
 .white {
-  background-color: white;
+  background-color:$white;
   color: $darkgray !important;
 }
 
 .black {
   background-color: $black;
+  h2 {
+    color: $lightGray;
+  }
+  label {
+    color: $lightGray;
+  }
 }
 
 .gray {
@@ -404,7 +415,11 @@ body {
 
 .dark .navigation-container {
   background-color: #212121; 
-  border-bottom: 1px solid #424242;
+  border-bottom: 1px solid $cardGray;
+}
+
+.dark .card {
+  background-color: $cardGray;
 }
 
 .dark .card__image {
@@ -412,7 +427,6 @@ body {
 }
 
 .dark .card__info__box, .dark .photo-bar {
-  background-color: #424242;
   border-radius: 0px 0px 5px 5px;
 
 }

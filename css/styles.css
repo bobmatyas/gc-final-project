@@ -605,15 +605,19 @@ input:checked + .slider:before {
   }
 }
 .resultsContainer {
+  padding: 20px 0;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #e5ebee;
+  background-color: #f6f6f6;
 }
 
 .dark .resultsContainer {
-  background-color: #666666;
+  background-color: #353535;
+}
+.dark .search-results h2 {
+  color: #9E9E9E;
 }
 
 .search-results {
@@ -625,6 +629,7 @@ input:checked + .slider:before {
 }
 
 .card {
+  background-color: #ffffff;
   border: 1px solid #666666;
   border-radius: 0px 0px 5px 5px;
   margin: 20px;
@@ -728,6 +733,38 @@ input[type=text]:focus {
 
 .home__search__bar__input__holder__box {
   padding: 15px 15px 0 0;
+}
+.home__search__bar__input__holder__box button {
+  color: #424242;
+}
+.home__search__bar__input__holder__box button:hover {
+  background-color: #9E9E9E;
+}
+
+.containerContainer select {
+  border-radius: none;
+}
+.containerContainer input {
+  border-radius: none;
+}
+
+.dark .containerContainer input {
+  background-color: #424242;
+  color: #e5ebee;
+}
+.dark .containerContainer .home__search__bar__input__holder__box {
+  padding: 15px 15px 0 0;
+}
+.dark .containerContainer .home__search__bar__input__holder__box button {
+  background-color: #424242;
+  color: #e5ebee;
+}
+.dark .containerContainer .home__search__bar__input__holder__box button:hover {
+  background-color: #9E9E9E;
+}
+.dark .containerContainer .home__search__bar__input__holder__box select {
+  background-color: #424242;
+  color: #e5ebee;
 }
 
 .home__search__bar__input__holder__label {
@@ -1040,6 +1077,14 @@ body {
   width: 100vw;
 }
 
+h2 {
+  color: #353F3E;
+}
+
+label {
+  color: #353F3E;
+}
+
 .cardSpec {
   padding: 10px 0;
   font-weight: 900;
@@ -1215,12 +1260,18 @@ body {
 }
 
 .white {
-  background-color: white;
+  background-color: #ffffff;
   color: darkgray !important;
 }
 
 .black {
   background-color: #0f0f0f;
+}
+.black h2 {
+  color: #e5ebee;
+}
+.black label {
+  color: #e5ebee;
 }
 
 .gray {
@@ -1418,6 +1469,13 @@ body {
     width: 125px;
     height: 125px;
   }
+
+  .home__search__bar__input__holder__select {
+    padding: 7px;
+    border-radius: 0;
+    margin-top: 9px;
+    font-size: 16px;
+  }
 }
 .dark {
   background-color: #303030;
@@ -1429,12 +1487,15 @@ body {
   border-bottom: 1px solid #424242;
 }
 
+.dark .card {
+  background-color: #424242;
+}
+
 .dark .card__image {
   border-bottom: 2px solid #212121;
 }
 
 .dark .card__info__box, .dark .photo-bar {
-  background-color: #424242;
   border-radius: 0px 0px 5px 5px;
 }
 

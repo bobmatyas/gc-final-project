@@ -1,3 +1,5 @@
+@import 'colors';
+
 input[type=text] {
   width: 280px;
   -webkit-transition: width .35s ease-in-out;
@@ -26,6 +28,46 @@ input[type=text]:focus {
 
 .home__search__bar__input__holder__box {
   padding: 15px 15px 0 0;
+
+  button {
+    color: $cardGray;
+  }
+  button:hover {
+    background-color: $gray;
+  }
+}
+
+.containerContainer {
+  select {
+    border-radius: none;
+  }
+  input {
+    border-radius: none;
+  }
+}
+
+.dark{
+  .containerContainer {
+    input {
+      background-color: $cardGray;
+      color: $lightGray;
+    }
+    .home__search__bar__input__holder__box {
+      padding: 15px 15px 0 0;
+    
+      button {
+        background-color: $cardGray;
+        color: $lightGray;
+      }
+      button:hover {
+        background-color: $gray;
+      }
+      select {
+        background-color: $cardGray;
+        color: $lightGray;
+      }
+    }
+  }
 }
 
 .home__search__bar__input__holder__label {
