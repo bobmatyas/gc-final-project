@@ -164,7 +164,7 @@ angular.module('ColorApp').component('mainSearch', {
   template: `
     
 
-      <div class="home__search__bar" ng-if="selectedColor" style="background-color: {{ selectedColorHex }};" > 
+      <div class="home__search__bar {{ selectedColor }}" ng-if="selectedColor" style="background-color: {{ selectedColorHex }};" > 
         <div class="backColorContainer">
           <span class="grayText">search </span><span class="backColor {{selectedColor}}Text">  {{ selectedColor }}  </span><span class="grayText"> photos</span>
         </div>

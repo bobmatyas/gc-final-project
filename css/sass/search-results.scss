@@ -1,15 +1,23 @@
+@import 'colors';
 
 .resultsContainer {
+  padding: 20px 0;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: $lightGray;
+  background-color: #f6f6f6;
 }
 
 .dark {
   .resultsContainer {
-    background-color: $navMenuGray;
+    background-color: #353535;
+  }
+
+  .search-results {
+    h2 {
+      color: $gray;
+    }
   }
 }
 
@@ -22,6 +30,7 @@
 }
 
 .card {
+  background-color: $white;
   border: 1px solid #666666;
   border-radius: 0px 0px 5px 5px;
   margin: 20px;
