@@ -365,33 +365,40 @@ body {
 }
 
 .welcome {
-  justify-content: center;
-  text-align: center;
-  z-index: 1;
-  position: absolute;
   width: 30%;
-  // margin-left: 50%;
-  // margin-right: 25%;
-  // padding-left: 15px;
-  font-family: 'Open Sans', sans-serif;
-  color: #353F3E;
-  line-height: 1.6rem;
-  background-color: $yellow;
-  border-radius: .4em;
+  margin: 50px auto;
+  border: 4px solid $yellow;
+  padding: 20px;
+  text-align: center;
+  color: $darkergray;
+  font-family: arial;
+  position: relative;
+}
+
+.welcome:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid $yellow;
+  right: 50%;
+  top: -23px;
 }
 
 .welcome:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-bottom-color:$yellow;
-	border-top: 0;
-	margin-left: -20px;
-	margin-top: -20px;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  right: 50%;
+  top: -18px;
 }
 
 @media only screen and (min-width: $desktop)  {
@@ -486,4 +493,8 @@ body {
   color: $darkgray;
   font-size: 50px;
   text-transform: uppercase;
+}
+
+button {
+  border-radius: 0;
 }
