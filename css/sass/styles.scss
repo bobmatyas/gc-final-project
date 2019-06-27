@@ -11,11 +11,10 @@ browsers */
 @import 'search-bar';
 @import 'background';
 
-@import 'header';
-
 /* media query css is at the bottom of the file */
 
-$desktop: 600px;
+$tablet: 768px;
+$desktop: 1024px;
 
 /* dark mode css is at the bottom of the file */
 
@@ -401,12 +400,6 @@ body {
   top: -18px;
 }
 
-@media only screen and (min-width: $desktop)  {
-
-  @import 'desktop';
-
-}
-
 
 .dark {
   background-color: #303030;
@@ -497,4 +490,18 @@ body {
 
 button {
   border-radius: 0;
+}
+
+//media queries
+
+@media only screen and (min-width: $tablet)  {
+
+  @import 'tablet';
+
+}
+
+@media only screen and (min-width: $desktop)  {
+
+  @import 'desktop';
+
 }
