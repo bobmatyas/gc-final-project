@@ -15,13 +15,23 @@
 }
 
 .color-palette {
-  padding: 5%;
+padding-left: 5%;
 }
 
 .comp-colors-title {
   font-size: 2.4rem;
+  color: $darkergray;
 }
 
+.dark {
+  .comp-colors-title {
+    color: white;
+  }
+
+  .photo-bar {
+    color: $darkergray;
+}
+}
 
 .color2 {
     /* background-color: #000; */
