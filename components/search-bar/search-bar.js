@@ -53,8 +53,9 @@ angular.module('ColorApp').component('searchBar', {
   template: `
   <div class="containerContainer">
         
-        <h2>Search</h2>
-        <input type="text" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="search by keyword" ng-keypress="($event.charCode==13)? $ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.color}) : return" />
+        <label for="searchText" class="home__search__bar__input__holder__label__search">Search:</label><br>
+
+        <input type="text" id="searchText" maxlength="100" ng-model="$ctrl.photoSearch" placeholder="search by keyword" ng-keypress="($event.charCode==13)? $ctrl.getPhotos({queryText: $ctrl.photoSearch, photoCategory: $ctrl.photoCategory, photoOrientation: $ctrl.photoOrientation, selectedColor: $ctrl.color}) : return" />
         
         <div class="home__search__bar__input__holder">
           <div  class="home__search__bar__input__holder__box">

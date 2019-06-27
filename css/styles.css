@@ -702,7 +702,7 @@ input:checked + .slider:before {
   -webkit-transition-duration: 0.4s;
   /* Safari */
   transition-duration: 0.4s;
-  color: #000;
+  text-decoration: underline;
   background-color: none;
 }
 
@@ -711,6 +711,7 @@ input[type=text] {
   -webkit-transition: width 0.35s ease-in-out;
   transition: width 0.35s ease-in-out;
   padding: 10px;
+  margin-top: 10px;
   border: 1px solid #fff;
   font-size: 16px;
 }
@@ -770,6 +771,13 @@ input[type=text]:focus {
 .home__search__bar__input__holder__label {
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.home__search__bar__input__holder__label__search {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
 }
 
 .home__search__bar__input__holder__select {
@@ -1078,10 +1086,6 @@ body {
 }
 
 h2 {
-  color: #353F3E;
-}
-
-label {
   color: #353F3E;
 }
 
@@ -1562,7 +1566,7 @@ body {
   text-transform: uppercase;
 }
 
-button.button {
+button {
   border-radius: 0;
 }
 
