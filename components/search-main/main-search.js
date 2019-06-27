@@ -3,7 +3,6 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
   var ctrl = this;
   this.service = PhotoService;
 
-
   // this function gets the photos based on user search criteria
 
   ctrl.getPhotos = (queryText, photoCategory, photoOrientation, selectedColor) => {
@@ -11,9 +10,9 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
     return $q(function(resolve, reject) {
       PhotoService.getPhotos(queryText, photoCategory, photoOrientation, selectedColor)      
         .then( (response) => {
-          console.log(response.data.hits);  
+          // console.log(response.data.hits);  
           ctrl.photos = response.data.hits;
-          console.log(ctrl.photos);
+          // console.log(ctrl.photos);
           resolve();
           }
         ) 
@@ -24,15 +23,6 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
         });
     });
   }
-
-
-   // these come direct from the Pixabay API
-
-  // ctrl.colors = [
-  //   {
-  //     color:"grayscale",
-  //     hex:
-  //   } "red", "orange", "yellow", "green", "turquoise", "blue", "lilac", "pink", "gray", "black","brown"];
 
   ctrl.colors = [
     {
@@ -122,23 +112,20 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
    $scope.selectedColor = '';
   //  $scope.hideBgTitle = 0;
 
- 
    $scope.selectColor = (color) => {
-     console.log('selectColor clicked');
+    //  console.log('selectColor clicked');
      $scope.selectedColor = color.color;
      $scope.selectedColorHex = color.hex;
-     console.log(`Selected Color: ${$scope.selectedColor}`);
+    //  console.log(`Selected Color: ${$scope.selectedColor}`);
      ctrl.hideGrid = 1;
      PhotoService.hideBgTitle = 1;
      PhotoService.hideWelcome = 1;
    }
  
-
-
   ctrl.addFavorite = (id, largeFormatURL, webFormatURL, tags, downloads, views) => {
     PhotoService.setFavorites(id, largeFormatURL, webFormatURL, tags, downloads, views);
-    console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
-    console.log("you clicked it");
+    // console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
+    // console.log("you clicked it");
   }
 
   /**
@@ -154,16 +141,10 @@ function MainSearchController(PhotoService, $q, $scope, $location) {
     PhotoService.photo = photo;
     $location.path('/photo');
   }
- 
-   // angular animations tips: https://forums.asp.net/t/2094767.aspx?AngularJS+How+to+move+a+div+from+bottom+to+up
-
-
 }
 
 angular.module('ColorApp').component('mainSearch', {
   template: `
-    
-
       <div class="home__search__bar {{ selectedColor }}" ng-if="selectedColor" style="background-color: {{ selectedColorHex }};" > 
         <div class="backColorContainer">
           <span class="grayText">search </span><span class="backColor {{selectedColor}}Text">  {{ selectedColor }}  </span><span class="grayText"> photos</span>
@@ -211,9 +192,7 @@ angular.module('ColorApp').component('mainSearch', {
         <div ng-if="$ctrl.photos.length < 1">
           <h3 style="color: red; font-weight: bold;">No results.</h3>
         </div>
-
       </div>
-
-    `, // or use templateUrl
+    `, 
   controller: MainSearchController
 });

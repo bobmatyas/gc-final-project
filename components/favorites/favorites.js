@@ -3,28 +3,26 @@ function FavoritesPageController(PhotoService, $location) {
 
     ctrl.favoriteArray = PhotoService.favoriteArray;
 
-    console.log('favorites');
+    // console.log('favorites');
 
-    console.log(ctrl.favoriteArray);
+    // console.log(ctrl.favoriteArray);
     
     ctrl.addFavorite = (id, largeFormatURL, webFormatURL, tags, downloads, views) => {
       PhotoService.setFavorites(id, largeFormatURL, webFormatURL, tags, downloads, views);
-      console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
-      console.log("you clicked it");
+      // console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
+      // console.log("you clicked it");
     }
 
     ctrl.setRemoveFavorites = (favorite) => {
       PhotoService.setRemoveFavorites(favorite)
-      console.log("you removed it!");
+      // console.log("you removed it!");
     }
 
     ctrl.individualPhotoSave = (photo) => {
       PhotoService.photo = photo;
       $location.path('/photo');
-      console.log("getting palette");
-
+      // console.log("getting palette");
     }
-
   }
   
   angular

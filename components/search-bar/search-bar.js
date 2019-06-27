@@ -30,7 +30,6 @@ function SearchBarController() {
     'travel'
   ]; 
 
-
   /** 
    * A static array of photo orientations.
    * The orientation list is provided by Pixabay. 
@@ -83,12 +82,10 @@ angular.module('ColorApp').component('searchBar', {
           </div>
         </div>
     </div> 
-
-    `, // or use templateUrl
+    `, 
   controller: SearchBarController,
   bindings: {
     getPhotos: "&",
     color: "<",
-    // colors: "<"
   }
 });

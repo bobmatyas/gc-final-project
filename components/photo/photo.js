@@ -8,24 +8,24 @@ function PhotoController(PhotoService, $q, $scope) {
 
     ctrl.addFavorite = (id, largeFormatURL, webFormatURL, tags, downloads, views) => {
       PhotoService.setFavorites(id, largeFormatURL, webFormatURL, tags, downloads, views);
-      console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
-      console.log("you clicked it");
+      // console.log(id, largeFormatURL, webFormatURL, tags, downloads, views)
+      // console.log("you clicked it");
     }
 
     ctrl.imageColor = (image) => {
       PhotoService.extractColor(image)
         .then( (response) => {
-          console.log(`color scheme`);
-          console.log(response);
+          // console.log(`color scheme`);
+          // console.log(response);
           response.tags.forEach( (color, index) => {
             response.tags[index].rgb = ctrl.hexToRgb(color.color);
           })
 
           ctrl.colorScheme = response.tags;
-          console.log(`response tags: ${response.tags}`);
+          // console.log(`response tags: ${response.tags}`);
           /* needs to test: builds copyable palette */
           ctrl.buildCopyablePalette(response.tags);
-          console.log(response.data);
+          // console.log(response.data);
           }
         )
         .catch( function(error) {
@@ -62,7 +62,6 @@ function PhotoController(PhotoService, $q, $scope) {
         ctrl.copyablePalette += `${element.label} / ${element.color} / ${element.rgb} \n`
         //console.log(ctrl.copyablePalette);
       });
-
     }
 
     ctrl.$onInit = function() {
@@ -70,9 +69,10 @@ function PhotoController(PhotoService, $q, $scope) {
       ctrl.buildCopyablePalette(ctrl.colorTest);
     };
 
+    ctrl.$onInit = function() {
+      ctrl.imageColor(ctrl.image);
+    };
   };  
-  
-
 
   angular.module('ColorApp').component('photo', {
     template: `
@@ -83,7 +83,6 @@ function PhotoController(PhotoService, $q, $scope) {
           class="imageSize"
           id="indivPhoto"
           ng-src="{{ $ctrl.image }}"
-          ng-click="$ctrl.imageColor($ctrl.image)"
         />
         <div class="photo-bar">
           <div class="">
@@ -114,11 +113,7 @@ function PhotoController(PhotoService, $q, $scope) {
           <button class="button" ngclipboard data-clipboard-text="{{ $ctrl.copyablePalette }}">
             <i class="material-icons md-18" style="font-size: 16px;">file_copy</i> Copy to clipboard
           </button>
-
         </div>
-         
-
-
       </div>
     </div>
   </div>

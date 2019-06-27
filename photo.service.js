@@ -21,19 +21,10 @@ function PhotoService($http) {
         colors: selectedColor,
       }
     });
-  };
-
-  // service.getIndividualPhoto = (id) => {
-  //   return $http.get('https://pixabay.com/api/?', {
-  //     params: {
-  //       key: '12720616-1db5a8f546ac81882f86afb32', 
-  //       id: id,
-  //     }
-  //   });
-  // }   
+  }; 
 
   service.extractColor = (image) => {
-    console.log("test");
+    // console.log("test");
     return $http.get('https://apicloud-colortag.p.mashape.com/tag-url.json', {
       headers:{
         'X-RapidAPI-Host': 'apicloud-colortag.p.rapidapi.com',
@@ -51,7 +42,7 @@ function PhotoService($http) {
 
   service.setFavorites = (id, largeFormatURL, webFormatURL, tags, downloads, views) =>{
     if (service.isInFavorites(id) !== false) {
-      console.log("already in favorites");
+      // console.log("already in favorites");
     }
     else {
 
@@ -63,14 +54,14 @@ function PhotoService($http) {
         downloads: downloads,
         views: views
       }
-      console.log(newFavorite);
+      // console.log(newFavorite);
       service.favoriteArray.push(newFavorite);
-      console.log(service.favoriteArray)
+      // console.log(service.favoriteArray)
    }
   }
 
   service.setRemoveFavorites = (favorite) => {
-    console.log(`favorite to remove: ${favorite}`);
+    // console.log(`favorite to remove: ${favorite}`);
     let i = service.isInFavorites(favorite);
     if (i !== false) {
       service.favoriteArray.splice(i, 1);
@@ -80,7 +71,7 @@ function PhotoService($http) {
   service.photo = '';
 
   service.selectedPhoto = (image) => {
-    console.log('testing photo service');
+    // console.log('testing photo service');
     service.photo = image;
   }
 
@@ -90,9 +81,9 @@ function PhotoService($http) {
   }
 
   service.isInFavorites = (photo_id) => {
-    console.log(`is in favorites called`);
-    console.log(photo_id);
-    console.log(service.favoriteArray);
+    // console.log(`is in favorites called`);
+    // console.log(photo_id);
+    // console.log(service.favoriteArray);
     for (var i = 0 ; i < service.favoriteArray.length; i++) {
       if (service.favoriteArray[i].id == photo_id) {
           return i;

@@ -35,11 +35,8 @@ angular.module('ColorApp').component('photoCard', {
       <div class="card__button__holder">
         <button class="button--card button {{ $ctrl.color }}" ng-click="$ctrl.individualPhotoSave({photo: $ctrl.photo})">Get Palette</button>
       </div>
-
     </div>
-
-
-    `, // or use templateUrl
+    `,
   controller: PhotoCardController,
   bindings: {
     photo: '<',

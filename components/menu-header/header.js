@@ -3,14 +3,13 @@ function MenuHeaderController($rootScope, $scope) {
 
   $rootScope.bodyClass = '';
 
-
   ctrl.toggleDark = () => {
     if (!$rootScope.bodyClass) {
       $rootScope.bodyClass = 'dark';
     } else if ($rootScope.bodyClass) {
       $rootScope.bodyClass = '';
     }
-    console.log($rootScope.bodyClass);
+    // console.log($rootScope.bodyClass);
   }
   
 }
@@ -47,7 +46,7 @@ angular.module('ColorApp').component('menuHeader', {
         </div>
       </nav>
     </header>
-    `, // or use templateUrl
+    `, 
   controller: MenuHeaderController,
   bindings: {
     color: '<'
