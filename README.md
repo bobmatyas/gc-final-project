@@ -1,1 +1,1 @@
-# Grand Circus Final Group Project
+# PicturePalette

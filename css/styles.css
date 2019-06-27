@@ -357,11 +357,19 @@ template {
 }
 
 .color-palette {
-  padding: 5%;
+  padding-left: 5%;
 }
 
 .comp-colors-title {
   font-size: 2.4rem;
+  color: #353F3E;
+}
+
+.dark .comp-colors-title {
+  color: white;
+}
+.dark .photo-bar {
+  color: #353F3E;
 }
 
 .color2 {
@@ -410,6 +418,9 @@ template {
 .dark .logo a {
   color: #666666;
   text-decoration: none;
+}
+.dark h2 {
+  color: white;
 }
 
 .navigation-container {
@@ -694,7 +705,7 @@ input:checked + .slider:before {
 }
 
 .button--card {
-  color: #fff;
+  color: #353F3E;
 }
 
 .button--card:hover {
@@ -702,7 +713,7 @@ input:checked + .slider:before {
   -webkit-transition-duration: 0.4s;
   /* Safari */
   transition-duration: 0.4s;
-  color: #000;
+  text-decoration: underline;
   background-color: none;
 }
 
@@ -711,6 +722,7 @@ input[type=text] {
   -webkit-transition: width 0.35s ease-in-out;
   transition: width 0.35s ease-in-out;
   padding: 10px;
+  margin-top: 10px;
   border: 1px solid #fff;
   font-size: 16px;
 }
@@ -770,6 +782,13 @@ input[type=text]:focus {
 .home__search__bar__input__holder__label {
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.home__search__bar__input__holder__label__search {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
 }
 
 .home__search__bar__input__holder__select {
@@ -850,6 +869,216 @@ input[type=text]:focus {
     opacity: 0.4;
   }
 }
+.logo {
+  font-family: "Sansita", sans-serif;
+  font-size: 2.6rem;
+}
+
+.logo a {
+  color: #353F3E;
+  text-decoration: none;
+}
+
+.dark .logo a {
+  color: #666666;
+  text-decoration: none;
+}
+.dark h2 {
+  color: white;
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 0 5%;
+  box-shadow: 0 5px 10px 0 rgba(102, 102, 102, 0.1);
+}
+
+.navigation-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-menu li {
+  list-style: none;
+  padding: 0 5px;
+  color: #666666;
+  font-size: 0.9rem;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navigation-menu li:nth-child(2) {
+  border-left: 1px solid #eee;
+}
+
+.navigation-menu li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigation-menu li:hover {
+  color: #009688;
+}
+
+.dark .navigation-menu li:hover {
+  color: #F44336;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #000;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  color: #9E9E9E;
+}
+
+.logo2 {
+  -webkit-animation: color-change 10s infinite;
+  -moz-animation: color-change 10s infinite;
+  animation: color-change 10s infinite;
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    color: #F44336;
+  }
+  10% {
+    color: #FF9800;
+  }
+  30% {
+    color: #FFEB3B;
+  }
+  45% {
+    color: #8BC34A;
+  }
+  60% {
+    color: #009688;
+  }
+  80% {
+    color: #03A9F4;
+  }
+  90% {
+    color: #9C27B0;
+  }
+  100% {
+    color: #E91E63;
+  }
+}
+@-moz-keyframes color-change {
+  0% {
+    color: #F44336;
+  }
+  10% {
+    color: #FF9800;
+  }
+  30% {
+    color: #FFEB3B;
+  }
+  45% {
+    color: #8BC34A;
+  }
+  60% {
+    color: #009688;
+  }
+  80% {
+    color: #03A9F4;
+  }
+  90% {
+    color: #9C27B0;
+  }
+  100% {
+    color: #E91E63;
+  }
+}
+@keyframes color-change {
+  0% {
+    color: #F44336;
+  }
+  10% {
+    color: #FF9800;
+  }
+  30% {
+    color: #FFEB3B;
+  }
+  45% {
+    color: #8BC34A;
+  }
+  60% {
+    color: #009688;
+  }
+  80% {
+    color: #03A9F4;
+  }
+  90% {
+    color: #9C27B0;
+  }
+  100% {
+    color: #E91E63;
+  }
+}
 /* media query css is at the bottom of the file */
 /* dark mode css is at the bottom of the file */
 /* default font sizes and colors */
@@ -871,10 +1100,6 @@ body {
 }
 
 h2 {
-  color: #353F3E;
-}
-
-label {
   color: #353F3E;
 }
 
@@ -1029,7 +1254,7 @@ label {
 
 .yellow {
   background-color: #FFEB3B;
-  color: darkgray !important;
+  color: #353F3E !important;
 }
 
 .green {
@@ -1173,14 +1398,14 @@ body {
 }
 
 .welcome {
-  width: 30%;
-  margin: 50px auto;
+  margin: 5px auto;
   border: 4px solid #FFEB3B;
   padding: 20px;
   text-align: center;
   color: #353F3E;
   font-family: arial;
   position: relative;
+  width: 80%;
 }
 
 .welcome:before {
@@ -1209,6 +1434,71 @@ body {
   top: -18px;
 }
 
+@media only screen and (min-width: 600px) {
+  .color {
+    /* background-color: #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 190px;
+    border: solid 0px lightgray;
+    transition: border-width 0.3s linear, 1s;
+    color: white;
+    flex-direction: row;
+  }
+
+  .indiv-image {
+    max-width: 50%;
+  }
+
+  .photo-container {
+    padding: 5%;
+  }
+
+  .color-palette {
+    width: 50%;
+  }
+
+  .backColorContainer {
+    flex-direction: row;
+    transform: translateX(-90px) translateY(-270px);
+    padding-left: 50px;
+  }
+  .backColorContainer .grayText {
+    font-size: 60px;
+  }
+  .backColorContainer .backColor {
+    font-size: 110px;
+  }
+
+  .favoriteBanner {
+    transform: translateX(-25px) translateY(-220px);
+    color: darkgray;
+  }
+
+  .comp-colors2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .color2 {
+    width: 125px;
+    height: 125px;
+  }
+
+  .home__search__bar__input__holder__select {
+    padding: 7px;
+    border-radius: 0;
+    margin-top: 9px;
+    font-size: 16px;
+  }
+
+  .welcome {
+    width: 30%;
+  }
+}
 .dark {
   background-color: #303030;
   color: white;

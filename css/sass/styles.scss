@@ -54,9 +54,9 @@ h2 {
   color: $darkergray;
 }
 
-label {
-  color: $darkergray;
-}
+// label {
+//   color: $darkergray;
+// }
 
 .cardSpec {
   padding: 10px 0;
@@ -216,7 +216,7 @@ label {
 
 .yellow {
   background-color: $yellow;
-  color: $darkgray !important;
+  color: $darkergray !important;
 }
 
 .green {
@@ -364,14 +364,14 @@ body {
 }
 
 .welcome {
-  width: 30%;
-  margin: 50px auto;
+  margin: 5px auto;
   border: 4px solid $yellow;
   padding: 20px;
   text-align: center;
   color: $darkergray;
   font-family: arial;
   position: relative;
+  width: 80%;
 }
 
 .welcome:before {
