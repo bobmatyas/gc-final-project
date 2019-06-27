@@ -25,16 +25,15 @@
 }
 
 .backColorContainer {
-  flex-direction: row;
   transform: translateX(-90px) translateY(-270px);
 
   .grayText {
-    font-size: 60px;
+    font-size: 45px;
   }
   .backColor {
-    font-size: 110px;
+    font-size: 80px;
   }
-  padding-left: 50px;
+  padding-left: 25px;
 }
 
 .favoriteBanner {
@@ -60,4 +59,3 @@
   margin-top: 9px;
   font-size: 16px;
 }
-
