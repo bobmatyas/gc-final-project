@@ -1,5 +1,9 @@
 ![PicturePalette Screenshot](https://github.com/bobmatyas/gc-final-project/blob/master/screenshot.png)
 
+#PicturePalette
+
+[https://picturepalette.netlify.com](https://picturepalette.netlify.com)
+
 PicturePalette allows creatives to search quality, free stock photography by color - a rarity in the marketing world. This curative app is perfect for creatives looking for photography that compliments their brand colors. 
 
 ## Technologies 
