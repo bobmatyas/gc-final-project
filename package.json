@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/bobmatyas/gc-final-project#readme",
   "dependencies": {
-    "angular": "^1.7.8"
+    "angular": "^1.7.9"
   }
 }
